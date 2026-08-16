@@ -1,0 +1,1079 @@
+{
+  "project": {
+    "title": "Lauer\u2013Vigneau Family Investigation",
+    "research_subject": {
+      "label": "Annette (Compeau) Spiece",
+      "birth_month": 3,
+      "birth_day": 9,
+      "birth_year": 1979,
+      "birth_year_evidence": "User-provided court record",
+      "conception_window": "Approximate full-term conception window: early June through early July 1978, centered on mid-June 1978."
+    },
+    "evidence_policy": [
+      "Official/public record evidence, including user-provided court-record birth information and Emmet County marriage records",
+      "Yearbook evidence when independently verified",
+      "Explicit relationships listed in Facebook family sections",
+      "Information found in public Facebook posts",
+      "Facts independently verified by more than one source",
+      "DNA-supported family structure",
+      "Do not promote an inference or research candidate into the base pedigree without supporting evidence"
+    ]
+  },
+  "screenshot_evidence_log": {
+    "provenance": "Values and explicit relationship labels transcribed by the user from previously supplied screenshots; original image files are not stored in the current project",
+    "evidence_boundary": "The screenshots establish displayed cM values and explicit Facebook family labels. Exact genealogical relationships and pedigree placements are later interpretations unless separately documented.",
+    "vigneau_affholter_wife_matches": [
+      {"match": "Jeffrey M. Vigneau", "shared_cm": 1675},
+      {"match": "Sally Kolb", "shared_cm": 1254},
+      {"match": "Mike Vigneau Jr.", "shared_cm": 784},
+      {"match": "Lisa Hoffman", "shared_cm": 761},
+      {"match": "laurieqkk1965", "shared_cm": 510},
+      {"match": "Claudia Vigneau", "shared_cm": 458},
+      {"match": "Audrey Cook", "shared_cm": 425}
+    ],
+    "vigneau_affholter_pairwise": [
+      {"person_1": "Sally Kolb", "person_2": "Jeff Vigneau", "shared_cm": 1945},
+      {"person_1": "Sally Kolb", "person_2": "Mike Vigneau Jr.", "shared_cm": 860},
+      {"person_1": "Sally Kolb", "person_2": "Lisa Hoffman", "shared_cm": 1094},
+      {"person_1": "laurieqkk1965", "person_2": "Sally Kolb", "shared_cm": 1765}
+    ],
+    "vigneau_interpretations": [
+      "Jeff as the research subject's uncle is an interpretation combining 1,675 cM with the reconstructed pedigree",
+      "Lisa Hoffman as the research subject's first cousin is an interpretation combining 761 cM with the reconstructed pedigree",
+      "Mike Vigneau Jr. is user-confirmed as Mike Sr.'s son; his 784 cM match with the research subject is used as the DNA anchor for Mike Sr.'s elimination"
+    ],
+    "lauer_wife_matches": [
+      {"match": "Lori Lauer-Totten", "shared_cm": 739},
+      {"match": "George Lauer", "shared_cm": 389},
+      {"match": "Karen Kruskie-Brubeck", "shared_cm": 273},
+      {"match": "Jessica Totten", "shared_cm": 272},
+      {"match": "G.R.", "shared_cm": 220},
+      {"match": "Judy Wiesner Matchett", "shared_cm": 196},
+      {"match": "Frank Daniels", "shared_cm": 178}
+    ],
+    "lori_shared_match_comparison": [
+      {"match": "George Lauer", "wife_shared_cm": 389, "lori_shared_cm": 360},
+      {"match": "Karen Kruskie-Brubeck", "wife_shared_cm": 273, "lori_shared_cm": 301},
+      {"match": "Jessica Totten", "wife_shared_cm": 272, "lori_shared_cm": 3435},
+      {"match": "G.R.", "wife_shared_cm": 220, "lori_shared_cm": 309},
+      {"match": "Judy Wiesner Matchett", "wife_shared_cm": 196, "lori_shared_cm": 111},
+      {"match": "Frank Daniels", "wife_shared_cm": 178, "lori_shared_cm": 106},
+      {"match": "Colin Zuber", "wife_shared_cm": 142, "lori_shared_cm": 55},
+      {"match": "Nancy Doty", "wife_shared_cm": 125, "lori_shared_cm": 115},
+      {"match": "Alec Zuber", "wife_shared_cm": 111, "lori_shared_cm": 53},
+      {"match": "D.K.", "wife_shared_cm": 100, "lori_shared_cm": 95},
+      {"match": "Graham Zuber", "wife_shared_cm": 98, "lori_shared_cm": 38},
+      {"match": "L.E.", "wife_shared_cm": 94, "lori_shared_cm": 194},
+      {"match": "Chandler Bearup", "wife_shared_cm": 64, "lori_shared_cm": 60},
+      {"match": "Christine Austin", "wife_shared_cm": 61, "lori_shared_cm": 63}
+    ],
+    "facebook_explicit_labels": {
+      "Brandon Totten": ["Lori Lauer-Totten — mother", "Tom Totten — father", "Jessica Totten — sister", "Kyle Totten — brother"],
+      "Andrew Sievert": ["Matt Sievert — brother", "Adam Sievert — brother", "Dutch Sievert — cousin"],
+      "Elizabeth VanBerlo": ["Barbara VanBerlo — mother", "Martie Van Berlo — uncle", "Suzanna Van Berlo — grandmother", "Lori Lauer-Totten — cousin", "Suzanne Montgomery — aunt", "Carol French Lauer — aunt", "Betty Lauer — aunt", "Martina Vandekerkhof — aunt", "Annie Donkers-van Der Hoek — aunt", "Steve Lauer — cousin", "Matt Lauer — cousin", "Jay Lauer — cousin", "Chris Lauer Waldron — cousin", "Dave Lauer — cousin"]
+    },
+    "facebook_boundaries": [
+      "Elizabeth's cousin label for Lori does not identify which of Barbara's siblings is Lori's parent",
+      "Elizabeth's aunt label for Betty Lauer does not establish Betty as Lori's mother",
+      "Brandon's family labels do not identify Lori's parents",
+      "Andrew's screenshot does not identify Nina or Merle as his parents"
+    ]
+  },
+  "vigneau_affholter": {
+    "people": [
+      {
+        "name": "Ulysses / Ullysse J. Vigneau",
+        "relationship_notes": [
+          "Spouse of Florence Mayville"
+        ],
+        "evidence": [
+          "Multiple-source genealogy reconstruction"
+        ]
+      },
+      {
+        "name": "Florence Mayville",
+        "relationship_notes": [
+          "Spouse of Ulysses / Ullysse J. Vigneau"
+        ],
+        "evidence": [
+          "Multiple-source genealogy reconstruction"
+        ]
+      },
+      {
+        "name": "Eugene J. Vigneau",
+        "birth_year": 1919,
+        "relationship_notes": [
+          "Brother of Reaford Ulysse 'Buzz' Vigneau",
+          "Ancestor of Claudia Vigneau"
+        ],
+        "evidence": [
+          "Multiple sources"
+        ]
+      },
+      {
+        "name": "Reaford Ulysse 'Buzz' Vigneau",
+        "birth_year": 1921,
+        "relationship_notes": [
+          "Brother of Eugene J. Vigneau",
+          "Spouse of June Affholter",
+          "Parent generation of Tim, Mike, Jeff, Chris, and Nina"
+        ],
+        "evidence": [
+          "Multiple sources"
+        ]
+      },
+      {
+        "name": "June Affholter Vigneau",
+        "relationship_notes": [
+          "Spouse of Buzz Vigneau",
+          "Sister of Sally L. Affholter Kolb"
+        ],
+        "evidence": [
+          "Multiple-source family reconstruction"
+        ]
+      },
+      {
+        "name": "Sally L. Affholter Kolb",
+        "birth_year": 1936,
+        "death_year": 2021,
+        "relationship_notes": [
+          "Sister of June Affholter Vigneau",
+          "Maternal aunt of Tim, Mike, Jeff, Chris, and Nina"
+        ],
+        "dna": [
+          {
+            "with": "Jeff Vigneau",
+            "shared_cm": 1945
+          }
+        ],
+        "evidence": [
+          "Obituary/family records",
+          "DNA"
+        ]
+      },
+      {
+        "name": "Tim Vigneau",
+        "birth": {
+          "month": 8,
+          "day": 23,
+          "year": 1950,
+          "evidence": "Tim P. Vigneau 2016 obituary"
+        },
+        "death": {
+          "month": 12,
+          "day": 12,
+          "year": 2016,
+          "evidence": "Tim P. Vigneau 2016 obituary"
+        },
+        "relationship_notes": [
+          "Child of Buzz and June Vigneau",
+          "Spouse of Tira Vigneau",
+          "Parent of Lisa Vigneau Hoffman, Keri Vigneau Simonis, and Paul Vigneau",
+          "Eliminated as a biological-parent candidate"
+        ],
+        "descendants": [
+          {
+            "name": "Lisa Vigneau Hoffman",
+            "parents": [
+              "Tim P. Vigneau",
+              "Tira Vigneau"
+            ],
+            "relationship": "Daughter",
+            "spouse": "Doug Hoffman",
+            "children": [
+              "Marin Hoffman",
+              "Cole Hoffman",
+              "Sydney Hoffman"
+            ],
+            "source": "Tim P. Vigneau 2016 obituary"
+          },
+          {
+            "name": "Keri Vigneau Simonis",
+            "parents": [
+              "Tim P. Vigneau",
+              "Tira Vigneau"
+            ],
+            "relationship": "Daughter",
+            "spouse": "John Simonis",
+            "children": [
+              "Jordan Simonis",
+              "Sarah Simonis"
+            ],
+            "source": "Tim P. Vigneau 2016 obituary"
+          },
+          {
+            "name": "Paul Vigneau",
+            "parents": [
+              "Tim P. Vigneau",
+              "Tira Vigneau"
+            ],
+            "relationship": "Son",
+            "spouse": "Jill",
+            "children": [
+              "Megan Vigneau",
+              "Andrea Vigneau",
+              "Natalie Vigneau"
+            ],
+            "source": "Tim P. Vigneau 2016 obituary"
+          }
+        ],
+        "evidence": [
+          "Verified family structure",
+          "Tim P. Vigneau 2016 obituary"
+        ]
+      },
+      {
+        "name": "Mike Vigneau",
+        "birth": {
+          "year": 1947,
+          "evidence": "User-supplied birth-year note"
+        },
+        "relationship_notes": [
+          "Child of Buzz and June Vigneau",
+          "Parent of Mike Vigneau Jr.",
+          "Eliminated as biological father candidate using confirmed son Mike Vigneau Jr. as DNA anchor"
+        ],
+        "descendants": [
+          {
+            "name": "Mike Vigneau Jr.",
+            "parents": [
+              "Mike Vigneau"
+            ],
+            "relationship": "Son",
+            "source_1": "User confirmation",
+            "confidence": "confirmed_by_user",
+            "dna": {
+              "with": "Annette (Compeau) Spiece",
+              "shared_cm": 784,
+              "approx_percent": 11
+            }
+          }
+        ],
+        "evidence": [
+          "Verified family structure",
+          "User confirmation",
+          "DNA screenshot value"
+        ]
+      },
+      {
+        "name": "Jeff Vigneau",
+        "relationship_notes": [
+          "Child of Buzz and June Vigneau"
+        ],
+        "dna": [
+          {
+            "with": "Sally L. Affholter Kolb",
+            "shared_cm": 1945
+          }
+        ],
+        "evidence": [
+          "Verified family structure",
+          "DNA"
+        ]
+      },
+      {
+        "name": "Chris Vigneau",
+        "birth": {
+          "year": 1956,
+          "evidence": "User-supplied birth-year note; 1977 records also identify Chris as age 20/21"
+        },
+        "relationship_notes": [
+          "Child of Buzz and June Vigneau",
+          "Spouse of Keri Matchinski",
+          "Parent of Amanda Gilkerson and Anna Vigneau"
+        ],
+        "marriage": {
+          "spouse": "Keri Matchinski",
+          "year": 1981,
+          "evidence": "October 2, 1981 Petoskey News-Review wedding coverage plus user-confirmed child relationships"
+        },
+        "descendants": [
+          {
+            "name": "Amanda Gilkerson",
+            "parents": [
+              "Chris Vigneau",
+              "Keri Matchinski"
+            ],
+            "relationship": "Daughter",
+            "source_1": "User confirmation",
+            "confidence": "confirmed_by_user"
+          },
+          {
+            "name": "Anna Vigneau",
+            "parents": [
+              "Chris Vigneau",
+              "Keri Matchinski"
+            ],
+            "relationship": "Daughter",
+            "source_1": "User confirmation",
+            "confidence": "confirmed_by_user"
+          }
+        ],
+        "documentary_evidence": [
+          "January 17, 1977 Petoskey News-Review: Chris Andrew Vigneau, 20, of Petoskey named in a traffic disposition.",
+          "May 25, 1977 Petoskey News-Review: Chris Andrew Vigneau, 20, of Petoskey named in a District Court disposition.",
+          "August 5, 1977 Petoskey News-Review: Chris Vigneau played for the A&W Drive-In Petoskey men's slo-pitch team and was credited with two hits.",
+          "August 12, 1977 Petoskey News-Review: A&W softball team photo/caption explicitly named Chris Vigneau; Buzz Vigneau was team sponsor and Tim Vigneau was also named on the team.",
+          "December 30, 1977 Petoskey News-Review: Chris Vigneau, 21, of Petoskey named in an ORV-related citation item.",
+          "May 21, 1980 Petoskey News-Review: Chris Vigneau served as a groomsman in a Petoskey wedding.",
+          "October 2, 1981 Petoskey News-Review wedding coverage: Chris Vigneau married Keri Matchinski on September 26, 1981; June and Buzz Vigneau were identified as his parents, Jeff Vigneau as his brother, and Nina Sievert as his sister."
+        ],
+        "notes": [
+          "Documentary evidence places Chris in Petoskey throughout 1977 and still socially connected there in May 1980.",
+          "Chris was not married to Keri during the likely June 1978 conception window.",
+          "The highest-priority gap is Chris's residence and employment during early June through early July 1978."
+        ],
+        "evidence": [
+          "Verified family structure"
+        ]
+      },
+      {
+        "name": "Nina Vigneau",
+        "birth": {
+          "year": 1958,
+          "evidence": "User-supplied birth-year note"
+        },
+        "relationship_notes": [
+          "Child of Buzz and June Vigneau",
+          "Married Merle Sievert in 1981",
+          "Parent of Andrew Sievert, Matt Sievert, and Adam Sievert",
+          "Candidate classification: Unresolved but weaker"
+        ],
+        "marriage": {
+          "spouse": "Merle Sievert",
+          "year": 1981,
+          "evidence": "User-provided Emmet County marriage record"
+        },
+        "descendants": [
+          {
+            "name": "Andrew Sievert",
+            "parents": [
+              "Nina Vigneau"
+            ],
+            "relationship": "Child",
+            "source_1": "User confirmation",
+            "confidence": "confirmed_by_user"
+          },
+          {
+            "name": "Matt Sievert",
+            "parents": [
+              "Nina Vigneau"
+            ],
+            "relationship": "Child",
+            "source_1": "User confirmation",
+            "confidence": "confirmed_by_user"
+          },
+          {
+            "name": "Adam Sievert",
+            "parents": [
+              "Nina Vigneau"
+            ],
+            "relationship": "Child",
+            "source_1": "User confirmation",
+            "confidence": "confirmed_by_user"
+          }
+        ],
+        "evidence": [
+          "Verified family structure",
+          "Emmet County marriage record"
+        ]
+      },
+      {
+        "name": "Claudia Vigneau",
+        "relationship_notes": [
+          "Descends from Eugene J. Vigneau"
+        ],
+        "evidence": [
+          "Ancestry tree plus reconstructed pedigree"
+        ]
+      }
+    ]
+  },
+  "lauer_zuber": {
+    "people": [
+      {
+        "name": "John Lauer",
+        "relationship_notes": [
+          "Spouse of Christina Catherine Zuber"
+        ],
+        "evidence": [
+          "Multiple-source reconstruction"
+        ]
+      },
+      {
+        "name": "Christina Catherine Zuber",
+        "relationship_notes": [
+          "Spouse of John Lauer"
+        ],
+        "evidence": [
+          "Multiple-source reconstruction"
+        ]
+      },
+      {
+        "name": "Ernest Lauer",
+        "relationship_notes": [
+          "Branch containing George Lauer"
+        ],
+        "evidence": [
+          "Verified pedigree reconstruction"
+        ]
+      },
+      {
+        "name": "Neva",
+        "relationship_notes": [
+          "Spouse in the Ernest Lauer branch"
+        ],
+        "evidence": [
+          "Verified pedigree reconstruction"
+        ]
+      },
+      {
+        "name": "George Lauer",
+        "birth_year": 1947,
+        "birth_year_precision": "approximate",
+        "dna": [
+          {
+            "with": "User's wife",
+            "shared_cm": 389
+          },
+          {
+            "with": "Lori Lauer-Totten",
+            "shared_cm": 360
+          }
+        ],
+        "evidence": [
+          "Pedigree reconstruction",
+          "Ancestry DNA"
+        ]
+      },
+      {
+        "name": "Edward Henry Lauer",
+        "relationship_notes": [
+          "Spouse of Theresa Kruzel",
+          "Edward H. Lauer's 1997 obituary identifies 11 children with Theresa Kruzel Lauer: Cecelia, Diane, Barbara, Janet, Cynthia/Cindy, Patricia, Catherine, James, Lawrence, Richard, and Timothy"
+        ],
+        "evidence": [
+          "Multiple documentary sources",
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "Theresa Kruzel",
+        "relationship_notes": [
+          "Spouse of Edward Henry Lauer",
+          "Edward H. Lauer's 1997 obituary identifies Theresa and Edward's 11-child family structure"
+        ],
+        "evidence": [
+          "Multiple documentary sources",
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "Cecelia Lauer Pemberton",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Spouse of Philip Pemberton",
+          "Married Philip Pemberton in 1959 and had five children",
+          "Candidate classification: Low probability, not absolutely excluded"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "Diane Lauer Hannan",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Spouse of David Hannan",
+          "Married David Hannan in 1968",
+          "Candidate classification: Not eliminated / unresolved but weaker"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "Barbara VanBerlo",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Spouse of Peter VanBerlo",
+          "Mother of Elizabeth VanBerlo",
+          "Elizabeth VanBerlo was born August 12, 1978",
+          "Candidate classification: Essentially excluded as Annette's mother because Elizabeth's August 12, 1978 birth and Annette's March 9, 1979 birth make two separate full pregnancies biologically incompatible"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary",
+          "Multiple sources",
+          "Elizabeth VanBerlo Facebook family listing"
+        ]
+      },
+      {
+        "name": "Richard 'Dick' Lauer",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Verified member of the Edward Henry Lauer / Theresa Kruzel family",
+          "Spouse/partner of Betty Lauer",
+          "Parent of Lori Lauer-Totten with Betty Lauer",
+          "Candidate classification: Conditionally DNA-excluded as Annette's father because Annette's 739 cM match with Lori fits a cousin-type relationship better than Lori being Annette's half-sibling if Richard were Annette's father"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary",
+          "Multiple sources"
+        ]
+      },
+      {
+        "name": "Janet Lauer Wolf",
+        "birth": {
+          "month": 12,
+          "year": 1956,
+          "evidence": "Birth year supported by secondary public-record evidence; primary verification still needed"
+        },
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Verified daughter in the Edward Henry Lauer / Theresa Kruzel family",
+          "Candidate classification: Still in play / leading historical candidate"
+        ],
+        "marriage": {
+          "spouse": "Rich Wolf",
+          "month": 5,
+          "year": 1999,
+          "evidence": "User-confirmed marriage evidence"
+        },
+        "candidate_status": "Research candidate only; not a proven biological parent",
+        "evidence": [
+          "Edward H. Lauer 1997 obituary",
+          "Verified family reconstruction",
+          "Secondary public-record birth index"
+        ],
+        "facebook_evidence": [
+          "User-confirmed Facebook evidence: Janet was Petoskey High School Class of 1975."
+        ],
+        "documentary_evidence": [
+          "June 11, 1975 Petoskey News-Review: Janet Lauer appeared by name and photograph among Petoskey student recipients.",
+          "January 17, 1977 Petoskey News-Review: Janet K. Lauer, 20, was identified at 927 Kalamazoo St., Petoskey.",
+          "June 9, 1977 Petoskey News-Review: Janet Lauer was listed among North Central Michigan College graduates with an Associate of Commerce.",
+          "September 1, 1992 Petoskey News-Review: Janet Lauer of Petoskey gave a reading at Darlene Marie Hannan's wedding and was identified as the bride's aunt.",
+          "January 16, 1996 Petoskey News-Review: Janet Lauer was active in Petoskey Blue Star Mothers Show Your Colors Chapter No. 176.",
+          "June 5, 1997 Edward H. Lauer obituary: Janet was listed as Janet Lauer of Petoskey."
+        ],
+        "yearbook_evidence": [
+          {
+            "person": "Janet Lauer",
+            "school": "Petoskey High School",
+            "year": 1973,
+            "grade": "Sophomore",
+            "page": 38,
+            "pdf_page": 42,
+            "link": "https://www.petoskeylibrary.org/media/o3qjjtup/1973.pdf#page=42",
+            "comparison_person": "Chris Vigneau",
+            "comparison_link": "https://www.petoskeylibrary.org/media/o3qjjtup/1973.pdf#page=44",
+            "claim": "Janet Lauer and Chris Vigneau attended Petoskey High School in 1973 and were in the same sophomore class cohort.",
+            "interpretation": "Documented same-school/same-grade contact opportunity only.",
+            "evidence_type": "yearbook"
+          }
+        ],
+        "notes": [
+          "Public-record aggregators have produced inconsistent ages for Janet, so conflicting secondary records should not override stronger evidence.",
+          "Janet was documented at 927 Kalamazoo St., Petoskey on January 17, 1977 and remained local through North Central Michigan College graduation in June 1977.",
+          "No evidence currently shows Janet leaving Petoskey before the likely June 1978 conception window.",
+          "Janet married Rich Wolf in May 1999, so she was not married to Rich during 1978-1979.",
+          "The highest-priority Janet gap is residence and employment between June 1977 and July 1978.",
+          "No biological child of Janet Lauer Wolf has yet been reliably identified."
+        ]
+      },
+      {
+        "name": "Cynthia 'Cindy' Lauer Van Berlo",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Verified daughter in the Edward Henry Lauer / Theresa Kruzel family",
+          "Candidate classification: Unresolved but weaker"
+        ],
+        "marriage": {
+          "spouse": "Martie Van Berlo",
+          "month": 6,
+          "year": 1979,
+          "evidence": "User-provided Emmet County marriage record"
+        },
+        "candidate_status": "Unresolved but weaker; not a proven biological parent",
+        "evidence": [
+          "Edward H. Lauer 1997 obituary",
+          "Verified family structure",
+          "Emmet County marriage record"
+        ],
+        "documentary_evidence": [
+          "September 12, 1978 Petoskey News-Review engagement announcement: Cynthia Susan Lauer, daughter of Mr. and Mrs. Edward Lauer of Petoskey, was engaged to Martin John Van Berlo.",
+          "The same announcement identified Cindy as a Petoskey High School graduate employed in the office of Fochtman Motor Co. in Petoskey.",
+          "The same announcement identified Martin as employed with Palka Construction of Petoskey and said the wedding was planned for June 9."
+        ],
+        "descendants": [
+          {
+            "name": "Alicia Huwyler",
+            "parents": [
+              "Cynthia 'Cindy' Lauer Van Berlo",
+              "Martie Van Berlo"
+            ],
+            "relationship": "Daughter",
+            "source_1": "Public Facebook statements from Martie Van Berlo identify his and Cindy's two children and identify their daughter as Alicia.",
+            "source_2": "Independent Van Berlo family obituary evidence lists Alicia Huwyler among the grandchildren in the Martie/Cindy family structure.",
+            "confidence": "multi_source_verified",
+            "dna_testing_status": "unknown",
+            "ancestry_search_result": "no matching name found"
+          },
+          {
+            "name": "Nicholas 'Nick' Van Berlo",
+            "parents": [
+              "Cynthia 'Cindy' Lauer Van Berlo",
+              "Martie Van Berlo"
+            ],
+            "relationship": "Son",
+            "source_1": "Public Facebook statements from Martie Van Berlo identify his and Cindy's two children and identify their son as Nick.",
+            "source_2": "Independent Van Berlo family obituary evidence lists Nicholas Van Berlo among the grandchildren in the Martie/Cindy family structure.",
+            "confidence": "multi_source_verified",
+            "dna_testing_status": "unknown",
+            "ancestry_search_result": "no matching name found"
+          }
+        ],
+        "descendant_dna_note": "No matching names located in the current Ancestry search. This is not exclusionary because testing status is unknown.",
+        "notes": [
+          "By September 12, 1978 Cindy was documented as engaged to Martin John Van Berlo and working for Fochtman Motor Co. in Petoskey.",
+          "This does not eliminate Cindy, but it means any pregnancy from the likely June 1978 conception window would have overlapped with her engagement period.",
+          "The strongest direct documentary lead is Cindy's Petoskey employment in September 1978."
+        ],
+        "yearbook_evidence": [
+          {
+            "person": "Cindy Lauer",
+            "school": "Petoskey High School",
+            "year": 1973,
+            "grade": "Freshman",
+            "page": 47,
+            "pdf_page": 51,
+            "link": "https://www.petoskeylibrary.org/media/o3qjjtup/1973.pdf#page=51",
+            "claim": "Cindy Lauer and Nina Vigneau attended Petoskey High School in 1973 and were in the same freshman class cohort.",
+            "interpretation": "Documented same-school/same-grade contact opportunity only.",
+            "evidence_type": "yearbook"
+          },
+          {
+            "person": "Cindy Lauer",
+            "school": "Petoskey High School",
+            "year": 1974,
+            "grade": "Sophomore",
+            "link": "https://www.petoskeylibrary.org/media/j4fdq14f/1974.pdf",
+            "claim": "Cindy Lauer and Nina Vigneau both appear in the 1974 Petoskey High School sophomore cohort.",
+            "interpretation": "Documented same-school/same-grade evidence; page number not recorded in current notes.",
+            "evidence_type": "yearbook"
+          },
+          {
+            "person": "Cindy Lauer",
+            "school": "Petoskey High School",
+            "year": 1975,
+            "grade": "Junior",
+            "page": 41,
+            "pdf_page": 45,
+            "link": "https://www.petoskeylibrary.org/media/sexbcj44/1975.pdf#page=45",
+            "claim": "Cindy Lauer and Nina Vigneau again appear in the same junior class cohort in 1975.",
+            "interpretation": "Documented same-school/same-grade contact opportunity only.",
+            "evidence_type": "yearbook"
+          },
+          {
+            "person": "Cindy Lauer",
+            "school": "Petoskey High School",
+            "year": 1976,
+            "activity": "International Club",
+            "page": 74,
+            "pdf_page": 94,
+            "link": "https://www.petoskeylibrary.org/media/yankhzpn/1976.pdf#page=94",
+            "claim": "Cindy Lauer is named in the 1976 Petoskey High School yearbook International Club.",
+            "interpretation": "Shows continued documented presence at Petoskey High School in 1976.",
+            "evidence_type": "yearbook"
+          },
+          {
+            "person": "Cindy Lauer",
+            "school": "Petoskey High School",
+            "year": 1976,
+            "activity": "Pep Club",
+            "page": 78,
+            "pdf_page": 98,
+            "link": "https://www.petoskeylibrary.org/media/yankhzpn/1976.pdf#page=98",
+            "claim": "Cindy Lauer is named in the 1976 Petoskey High School yearbook Pep Club.",
+            "interpretation": "Shows continued documented presence at Petoskey High School in 1976.",
+            "evidence_type": "yearbook"
+          }
+        ]
+      },
+      {
+        "name": "Patricia Lauer",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Born February 14, 1948 and died July 18, 1949",
+          "Predeceased Edward H. Lauer",
+          "Candidate classification: Definitively excluded as Annette's mother",
+          "Separate from Patricia 'Patty' Lauer Bek in Donald and Velda's branch"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "Catherine Lauer",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Predeceased Edward H. Lauer",
+          "Candidate classification: Unclear / needs resolution because no death date is stored here proving she died before 1978"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "James Lauer",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Candidate classification: Low but not definitively excluded",
+          "Evidence placed him around Kentwood, Michigan, away from Petoskey"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "Lawrence Lauer",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Candidate classification: Very low probability, not absolutely excluded",
+          "Evidence placed him moving to Clearwater, Florida around 1975"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "Timothy Lauer",
+        "relationship_notes": [
+          "Child of Edward H. Lauer and Theresa Kruzel Lauer",
+          "Spouse of Linda",
+          "Parent of Anthony Lauer, born June 1977",
+          "Candidate classification: Weaker father candidate"
+        ],
+        "evidence": [
+          "Edward H. Lauer 1997 obituary"
+        ]
+      },
+      {
+        "name": "Elizabeth VanBerlo",
+        "relationship_notes": [
+          "Explicitly lists Barbara VanBerlo as mother",
+          "Explicitly lists Martie Van Berlo as uncle",
+          "Explicitly lists Suzanna Van Berlo as grandmother",
+          "Explicitly lists Lori Lauer-Totten as cousin"
+        ],
+        "evidence": [
+          "User-supplied Facebook family-section screenshot"
+        ]
+      },
+      {
+        "name": "Lori Lauer-Totten",
+        "birth": {
+          "month": 5,
+          "year": 1966,
+          "evidence": "User-provided court record"
+        },
+        "relationship_notes": [
+          "Mother of Jessica Totten, Brandon Totten, and Kyle Totten in collected family evidence",
+          "Confirmed child of Richard Lauer and Betty Lauer"
+        ],
+        "dna": [
+          {
+            "with": "User's wife",
+            "shared_cm": 739
+          },
+          {
+            "with": "George Lauer",
+            "shared_cm": 360
+          }
+        ],
+        "evidence": [
+          "Court record",
+          "Facebook family listing",
+          "Ancestry DNA",
+          "User-confirmed parentage"
+        ]
+      },
+      {
+        "name": "Tom Totten",
+        "relationship_notes": [
+          "Brandon Totten explicitly lists Tom as father"
+        ],
+        "evidence": [
+          "User-supplied Facebook family-section screenshot"
+        ]
+      },
+      {
+        "name": "Jessica Totten",
+        "relationship_notes": [
+          "Daughter of Lori Lauer-Totten",
+          "Brandon lists Jessica as sister"
+        ],
+        "dna": [
+          {
+            "with": "User's wife",
+            "shared_cm": 272
+          },
+          {
+            "with": "Lori Lauer-Totten",
+            "shared_cm": 3435
+          }
+        ],
+        "evidence": [
+          "Facebook family listing",
+          "Ancestry DNA"
+        ]
+      },
+      {
+        "name": "Brandon Totten",
+        "relationship_notes": [
+          "Lists Lori Lauer-Totten as mother",
+          "Lists Tom Totten as father",
+          "Lists Jessica Totten as sister",
+          "Lists Kyle Totten as brother"
+        ],
+        "evidence": [
+          "User-supplied Facebook family-section screenshot"
+        ]
+      },
+      {
+        "name": "Kyle Totten",
+        "relationship_notes": [
+          "Brandon Totten lists Kyle as brother"
+        ],
+        "evidence": [
+          "User-supplied Facebook family-section screenshot"
+        ]
+      }
+    ],
+    "separate_verified_branch": [
+      {
+        "name": "Donald Lauer",
+        "relationship_notes": [
+          "Child of Robert Lauer Sr. / Robert Joseph Lauer and Elsie Hunsberger",
+          "Spouse of Velda Krieger / Peterson"
+        ],
+        "evidence": [
+          "Verified family reconstruction"
+        ]
+      },
+      {
+        "name": "Velda Krieger / Peterson",
+        "relationship_notes": [
+          "Spouse of Donald Lauer"
+        ],
+        "evidence": [
+          "Verified family reconstruction"
+        ]
+      },
+      {
+        "name": "Patricia 'Patty' Lauer Bek",
+        "birth": {
+          "year": 1958,
+          "evidence": "User-supplied birth-year note"
+        },
+        "relationship_notes": [
+          "Child of Donald Lauer and Velda Krieger / Peterson",
+          "Sibling of Bryan Glen Lauer and Scott Lauer",
+          "Investigated as a possible 1979 biological parent, later deprioritized but not formally DNA-eliminated",
+          "Not proven to be Lori Lauer-Totten's aunt"
+        ],
+        "documentary_evidence": [
+          "September 30, 1977 Petoskey News-Review: Patricia A. Lauer, daughter of Donald L. Lauer of Harbor Springs, was engaged to Thomas A. Bek.",
+          "The same engagement item said Patty graduated Harbor Springs High School in 1976 and was a sophomore at Northern Michigan University.",
+          "May 20, 1978: confirmed wedding date of Patricia A. Lauer and Thomas A. Bek.",
+          "May 24, 1978 Petoskey News-Review wedding article: the newlyweds planned to live in Harbor Springs; Patty planned to attend Central Michigan University in fall 1978; Thomas was employed as a cook at The Pier in Harbor Springs."
+        ],
+        "notes": [
+          "Patty married only several weeks before the likely June 1978 conception window.",
+          "She remains biologically possible, but her documented marriage and post-wedding plans impose more historical constraints than Janet or Cindy."
+        ],
+        "evidence": [
+          "Verified family reconstruction",
+          "Recovered investigation notes citing Bryan Glen Lauer's obituary; original citation needs storage"
+        ]
+      },
+      {
+        "name": "Bryan Glen Lauer",
+        "birth": {
+          "month": 8,
+          "day": 9,
+          "year": 1959,
+          "evidence": "Recovered investigation notes citing Bryan Glen Lauer's obituary"
+        },
+        "death": {
+          "month": 9,
+          "day": 26,
+          "year": 2025,
+          "evidence": "Recovered investigation notes citing Bryan Glen Lauer's obituary"
+        },
+        "relationship_notes": [
+          "Child of Donald Lauer and Velda Krieger / Peterson",
+          "Sibling of Patricia 'Patty' Lauer Bek and Scott Lauer",
+          "Parent of Peter (Layne) Lauer and Morgan Lauer",
+          "Not established as Lori Lauer-Totten's uncle"
+        ],
+        "evidence": [
+          "Verified family reconstruction",
+          "Recovered investigation notes citing Bryan Glen Lauer's obituary; original citation needs storage"
+        ]
+      },
+      {
+        "name": "Scott Lauer",
+        "birth": {
+          "month": 9,
+          "year": 1968,
+          "evidence": "User-provided court record"
+        },
+        "relationship_notes": [
+          "Sibling of Patricia 'Patty' Lauer Bek and Bryan Glen Lauer",
+          "Child of Donald Lauer and Velda Krieger / Peterson",
+          "Eliminated as the research subject's biological-parent candidate on chronological grounds",
+          "Born September 1968 and approximately 10–11 years old during the relevant conception and 1979 birth period"
+        ],
+        "candidate_status": "Eliminated",
+        "elimination_reason": "Court-record birth information places Scott's birth in September 1968 and the research subject's birth in 1979, excluding him as a biological parent on chronological grounds.",
+        "evidence": [
+          "Court record",
+          "Verified family reconstruction"
+        ]
+      },
+      {
+        "name": "Peter Lauer",
+        "relationship_notes": [
+          "Child of Bryan Glen Lauer"
+        ],
+        "evidence": [
+          "Verified family reconstruction"
+        ]
+      },
+      {
+        "name": "Morgan Lauer",
+        "relationship_notes": [
+          "Child of Bryan Glen Lauer"
+        ],
+        "evidence": [
+          "Verified family reconstruction"
+        ]
+      }
+    ]
+  },
+  "recovered_branch_history": {
+    "donald_velda_branch": {
+      "confirmed_from_recovered_notes": [
+        "Bryan Glen Lauer was the son of Donald Lauer and Velda Krieger / Peterson",
+        "Patricia 'Patty' Lauer Bek, Bryan Glen Lauer, and Scott Lauer were siblings",
+        "Bryan's children were Peter (Layne) Lauer and Morgan Lauer"
+      ],
+      "approximate_ancestral_reconstruction": [
+        "John Lauer + Christina Catherine Zuber",
+        "Robert Lauer Sr. / Robert Joseph Lauer, brother of Edward H. Lauer + Elsie Hunsberger",
+        "Donald Lauer + Velda Krieger / Peterson",
+        "Patricia 'Patty' Lauer Bek / Bryan Glen Lauer / Scott Lauer"
+      ],
+      "evidence_boundary": "Robert Lauer Sr.'s 1981 obituary explicitly names Edward H. Lauer of Petoskey as Robert's brother, tying Robert -> Donald -> Patty into the same Lauer/Zuber family as Janet and Cindy. Recovered notes cite Bryan's obituary for the immediate Donald/Velda family. This branch does not establish Patty or Bryan as Lori's aunt or uncle."
+    },
+    "lori_parentage_resolved": {
+      "status": "resolved",
+      "resolved_parents": "Richard E. Lauer + Betty Jean Lauer immediate-family cluster",
+      "proposed_siblings": [
+        "Lori Lauer-Totten, born May 1966",
+        "Thomas, around 1967",
+        "Jeffrey, around 1970",
+        "Brian, around 1975"
+      ],
+      "basis": [
+        "Recovered notes summarizing public-record clustering, ages, and family associations",
+        "Elizabeth VanBerlo Facebook evidence naming Betty Lauer as aunt and Lori Lauer-Totten as cousin",
+        "DNA pattern made the Patty-as-parent model substantially less persuasive",
+        "User confirmation resolved Lori as the child of Richard Lauer and Betty Lauer"
+      ],
+      "evidence_boundary": "Lori's immediate placement is resolved as Richard and Betty's child. This does not identify Annette's exact biological parent."
+    }
+  },
+  "candidate_discovery": {
+    "vigneau_affholter": {
+      "active_candidates": [
+        {
+          "name": "Chris Vigneau",
+          "status": "still_in_play",
+          "evidence_boundary": "Candidate-specific DNA reasoning and 1978–1979 timeline are missing from current project files"
+        },
+        {
+          "name": "Nina Vigneau",
+          "status": "unresolved_but_weaker",
+          "verified_timeline": "Married Merle Sievert in 1981 according to a user-provided Emmet County marriage record; this does not exclude a 1979 birth",
+          "evidence_boundary": "Nina was investigated and is now unresolved but weaker; keep her in the documented Vigneau tree, not as a leading parent candidate."
+        }
+      ],
+      "historically_eliminated": [
+        {
+          "name": "Tim Vigneau",
+          "reason": "Previously eliminated during DNA analysis",
+          "missing_evidence": "Exact elimination evidence is missing from current project files"
+        },
+        {
+          "name": "Mike Vigneau",
+          "reason": "Confirmed son Mike Vigneau Jr. shares 784 cM, about 11%, with the research subject; that amount is inconsistent with the half-sibling relationship expected if Mike Sr. were the biological father",
+          "status": "Eliminated"
+        },
+        {
+          "name": "Jeff Vigneau",
+          "reason": "Prior interpretation placed Jeff at uncle level; screenshot shows research subject–Jeffrey M. Vigneau 1,675 cM and Sally Kolb–Jeff 1,945 cM",
+          "missing_evidence": "The uncle label is an interpretation based on the cM values plus the reconstructed pedigree, not a label displayed by Ancestry"
+        }
+      ]
+    },
+    "janet_lauer_wolf": {
+      "status": "still_in_play",
+      "status_label": "Still in play / research candidate",
+      "why_elevated": [
+        "Verified member of the Edward Henry Lauer / Theresa Kruzel daughter generation",
+        "Family position is compatible with the Lauer-side evidence",
+        "The 1973 Petoskey High School yearbook places Janet in the same sophomore cohort as Chris Vigneau",
+        "Later documentary evidence verifies Janet's marriage relationship with Rich Wolf, but the marriage date is not established",
+        "No verified 1978\u20131979 location is currently established"
+      ],
+      "recovered_records": [
+        "Elizabeth A. VanBerlo's 2023 funeral-home obituary identifies Janet (Lauer) and Rich Wolf together among Elizabeth's aunts and uncles",
+        "Amy Mae Wolf's 2016 newspaper obituary identifies Richard Wolf as Amy's father, Rhonda Bresemen Hausler as Amy's mother, and Janet as Amy's stepmother",
+        "Amy's obituary places Richard and Janet in Alanson, Michigan in 2016 and reports that Amy was born in Petoskey in 1978"
+      ],
+      "child_relationship_boundaries": [
+        "Amy Mae Wolf was Richard Wolf's biological daughter and Janet's stepdaughter, not Janet's biological child",
+        "Andy Wolf is identified as Amy's brother, but the obituary does not explicitly identify Andy's mother; his biological relationship to Janet remains unresolved",
+        "No reliable source located in this pass identifies any biological child of Janet"
+      ],
+      "remaining_gaps": [
+        "Janet's birth date or year",
+        "Janet's 1978\u20131979 location",
+        "Independent parent-identifying records for Andy or any other reported Wolf child"
+      ]
+    },
+    "cynthia_cindy_lauer_van_berlo": {
+      "status": "unresolved_but_weaker",
+      "why_elevated": [
+        "Verified member of the Edward Henry Lauer / Theresa Kruzel daughter generation",
+        "Family position is compatible with the Lauer-side evidence",
+        "Timeline/geography evidence placed her in the relevant age and location window",
+        "Emmet County record shows marriage to Martie Van Berlo in June 1979"
+      ]
+    },
+    "reasoning_chain": [
+      "DNA anchors: Lori 739 cM, George 389 cM, Jessica 272 cM, Lori\u2013George 360 cM",
+      "Reconstructed Lauer/Zuber family network",
+      "Elizabeth VanBerlo Facebook clue: Barbara = mother; Lori = cousin",
+      "Infer the relevant Lauer generation without assigning Lori an unproven parent",
+      "Filter by generation, age, geography, and 1978\u20131979 timeline",
+      "Elevate Janet and Cindy as research candidates only"
+    ]
+  },
+  "unresolved": [
+    "Exact biological parents of the user's wife",
+    "Briget Marie Sievert / Briget Pope unresolved intermediary identity/relationship question"
+  ]
+}

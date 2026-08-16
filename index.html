@@ -1,0 +1,680 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Evidence-Backed Family Tree</title>
+<style>
+:root{
+  --bg:#f4f6fa;
+  --panel:#ffffff;
+  --text:#1f2937;
+  --muted:#667085;
+  --border:#cbd5e1;
+  --line:#94a3b8;
+  --accent:#4156d9;
+  --accent-soft:#eef2ff;
+  --record:#eaf6ec;
+  --dna:#e8f3ff;
+  --facebook:#fff3e4;
+  --multi:#f4eaff;
+  --inference:#fff7d6;
+  --candidate:#fff0f6;
+  --candidate-border:#c94f7c;
+  --danger:#fff1f2;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.app{max-width:1500px;margin:0 auto;padding:22px}
+.header,.card{background:var(--panel);border:1px solid var(--border);border-radius:18px}
+.header{padding:20px;margin-bottom:18px}
+.header h1{margin:0 0 7px;font-size:28px}
+.header p{margin:0;color:var(--muted);line-height:1.5;max-width:1050px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tab{border:1px solid var(--border);background:#fff;border-radius:12px;padding:10px 16px;cursor:pointer;font-weight:700}
+.tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.view{display:none}.view.active{display:block}
+.card{padding:20px;margin-bottom:20px}
+.tree-toolbar{display:flex;justify-content:flex-end;margin:0 0 12px}
+.info-button{border:1px solid var(--border);background:#fff;border-radius:12px;padding:9px 13px;cursor:pointer;font-weight:700;color:#334155}
+.info-button:hover{border-color:var(--accent);background:var(--accent-soft)}
+.section-title{text-align:center;font-size:22px;font-weight:700;margin-bottom:20px}
+.section-subtitle{text-align:center;color:var(--muted);max-width:850px;margin:-10px auto 20px;line-height:1.45}
+.tree{display:flex;flex-direction:column;align-items:center;gap:12px;overflow-x:auto;padding-bottom:6px}
+.tree.wide-tree{align-items:flex-start;padding:8px 0 16px}
+.tree.wide-tree>.generation,.tree.wide-tree>.children,.tree.wide-tree>.couple{margin-left:20px}
+.generation{display:flex;justify-content:center;align-items:flex-start;gap:18px;min-width:max-content}
+.person{min-width:175px;max-width:230px;border:2px solid #b8c3d5;background:#fff;border-radius:13px;padding:11px 12px;text-align:center;cursor:pointer;box-shadow:0 2px 8px rgba(15,23,42,.05)}
+.person:hover{border-color:var(--accent);background:var(--accent-soft)}
+.person.candidate-parent{border-color:#c94f7c;background:#fff0f6}
+.person.strong-candidate{border-color:#7c3aed;background:#f5f3ff}
+.person.deprioritized{border-color:#94a3b8;background:#f8fafc}
+.person.weaker-candidate{border-color:#d97706;background:#fff7ed}
+.person.candidate-child{border-style:dashed;border-color:#7c3aed;background:#faf5ff}
+.name{font-weight:700;line-height:1.25}
+.meta{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.35}
+.spouse-note{font-size:12px;color:var(--muted);margin-top:7px;padding-top:7px;border-top:1px solid var(--border);line-height:1.35}
+.couple{display:flex;align-items:stretch;gap:8px;position:relative}
+.spouse-link{width:18px;height:2px;background:var(--line);align-self:center}
+.vertical{width:2px;height:24px;background:var(--line)}
+.children{display:flex;gap:14px;justify-content:center;min-width:max-content;position:relative;padding-top:18px}
+.children:before{content:"";position:absolute;top:0;left:7%;right:7%;height:2px;background:var(--line)}
+.child{position:relative}
+.child:before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--line)}
+.children.candidate-hypothesis:before,.child.candidate-hypothesis:before{background:transparent;border-top:2px dashed #7c3aed}
+.child.candidate-hypothesis:before{border-top:0;border-left:2px dashed #7c3aed}
+.generation-accordion{position:relative;margin-top:28px;text-align:center;min-width:max-content}
+.generation-accordion:before{content:"";position:absolute;top:-28px;left:50%;width:2px;height:28px;background:var(--line)}
+.generation-accordion>summary{display:inline-block;list-style:none;border:1px solid var(--border);border-radius:999px;background:#fff;padding:7px 12px;font-size:12px;font-weight:700;color:#475569;cursor:pointer;box-shadow:0 1px 4px rgba(15,23,42,.05)}
+.generation-accordion>summary::-webkit-details-marker{display:none}
+.generation-accordion>summary:before{content:"▶ ";font-size:10px;color:var(--muted)}
+.generation-accordion[open]>summary:before{content:"▼ "}
+.generation-accordion[open]>summary{background:var(--accent-soft);border-color:var(--accent)}
+.generation-accordion>.children{margin-top:8px}
+.branch-label{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;text-align:center;margin:8px 0}
+.badges{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin-top:7px}
+.badge{font-size:10px;padding:3px 7px;border-radius:999px;border:1px solid rgba(0,0,0,.08)}
+.record{background:var(--record)}
+.dna{background:var(--dna)}
+.fb{background:var(--facebook)}
+.multi{background:var(--multi)}
+.inference{background:var(--inference)}
+.yearbook{background:#e9fbf7}
+.note{background:var(--inference);border:1px solid #e6d995;border-radius:12px;padding:12px;font-size:13px;line-height:1.45;color:#5f5526}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.dna-table{width:100%;border-collapse:collapse;font-size:14px}
+.dna-table th,.dna-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;vertical-align:top}
+.dna-table th{color:var(--muted);font-size:12px;text-transform:uppercase}
+.relationship-grid,.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.relationship-box,.evidence-card{background:#fff;border:1px solid var(--border);border-radius:13px;padding:14px}
+.relationship-box{border-left:4px solid var(--accent)}
+.relationship-box .who,.evidence-card h3{font-weight:700;margin:0 0 7px}
+.evidence-card h3{font-size:17px}
+.source{font-size:12px;color:var(--muted);margin-bottom:8px}
+.evidence-card ul{margin:0;padding-left:18px;line-height:1.45;font-size:14px}
+
+/* Candidate discovery flow */
+.discovery-wrap{overflow-x:auto;padding:6px 4px 16px}
+.discovery{
+  min-width:1120px;
+  display:grid;
+  grid-template-columns: 210px 55px 230px 55px 260px 55px 260px;
+  align-items:center;
+  gap:0;
+}
+.flow-box{
+  min-height:150px;border:2px solid var(--border);border-radius:16px;background:#fff;padding:14px;
+  display:flex;flex-direction:column;justify-content:center;text-align:center;
+}
+.flow-box h3{margin:0 0 8px;font-size:17px}
+.flow-box p{margin:0;font-size:13px;line-height:1.45;color:var(--muted)}
+.flow-box.dna-step{background:var(--dna);border-color:#9ac3ef}
+.flow-box.record-step{background:var(--record);border-color:#acd3b3}
+.flow-box.fb-step{background:var(--facebook);border-color:#e2bf8e}
+.flow-box.reason-step{background:var(--inference);border-color:#dfc96a;border-style:dashed}
+.arrow{height:2px;background:var(--line);position:relative;margin:0 8px}
+.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:9px solid var(--line);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.inference-label{
+  font-size:11px;color:#776a2d;text-align:center;margin-top:6px;font-weight:700;text-transform:uppercase;letter-spacing:.03em
+}
+.candidate-area{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.candidate-card{
+  border:2px solid var(--candidate-border);background:var(--candidate);border-radius:16px;padding:18px;
+}
+.candidate-card h3{margin:0 0 6px;font-size:20px}
+.candidate-card .status{font-size:12px;font-weight:700;color:#8f2f56;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+.candidate-card ul{margin:0;padding-left:18px;line-height:1.5;font-size:14px}
+.path-summary{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:center;margin:18px 0 6px
+}
+.path-node{padding:10px;border-radius:12px;border:1px solid var(--border);background:#fff;text-align:center;font-size:13px;font-weight:700}
+.path-arrow{text-align:center;color:var(--muted);font-size:20px}
+.boundary{
+  margin-top:18px;background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:14px;line-height:1.45;font-size:14px
+}
+.boundary strong{color:#334155}
+.detail{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(760px,calc(100vw - 36px));max-height:86vh;overflow:auto;background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 18px 55px rgba(0,0,0,.24);padding:18px;display:none;z-index:50}
+.detail.show{display:block}
+.detail h3{margin:0 0 5px}
+.detail .close{float:right;border:0;background:#eef2f6;border-radius:8px;padding:6px 9px;cursor:pointer}
+.detail .sources{font-size:12px;color:var(--muted);margin-bottom:8px}
+.detail-body{clear:both}
+.detail-section{border-top:1px solid var(--border);padding-top:10px;margin-top:10px}
+.detail-section h4{margin:0 0 6px;font-size:14px;color:#334155}
+.detail ul{padding-left:19px;margin:0;line-height:1.45;font-size:14px}
+
+@media(max-width:900px){
+  .columns{grid-template-columns:1fr}
+  .candidate-area{grid-template-columns:1fr}
+  .path-summary{grid-template-columns:1fr}
+  .path-arrow{transform:rotate(90deg)}
+  .app{padding:12px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <h1>Evidence-Backed Family Tree</h1>
+    <p>The base family tree contains only relationships and dates supported by records, DNA-supported pedigree work, explicit Facebook family listings, public Facebook information, or facts independently verified by more than one source. Candidate reasoning is shown separately so hypotheses are never mistaken for proven pedigree facts.</p>
+    <div class="badges" style="justify-content:flex-start;margin-top:12px">
+      <span class="badge record">Record</span>
+      <span class="badge dna">DNA</span>
+      <span class="badge fb">Facebook</span>
+      <span class="badge multi">Multiple sources</span>
+      <span class="badge inference">Inference</span>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="tree">Family Tree</button>
+  </div>
+
+  <!-- FAMILY TREE -->
+  <div id="tree" class="view active">
+    <div class="tree-toolbar">
+      <button class="info-button" id="treeInfoBtn" type="button">How to read this tree</button>
+    </div>
+    <div class="card">
+      <div class="section-title">Parent 1 &mdash; Vigneau Side</div>
+      <div class="section-subtitle">Confirmed Vigneau / Affholter family structure. Married-in spouses are shown inside the blood-relative card so the branch flows down by generation.</div>
+      <div class="tree wide-tree">
+        <div class="generation">
+          <div class="person" data-id="ulysses">
+            <div class="name">Ulysses / Ullysse J. Vigneau</div>
+            <div class="spouse-note">Spouse: Florence Mayville</div>
+            <div class="badges"><span class="badge multi">Multiple sources</span></div>
+          </div>
+        </div>
+        <div class="vertical"></div>
+        <div class="children">
+          <div class="child">
+            <div class="person" data-id="eugene">
+              <div class="name">Eugene J. Vigneau</div>
+              <div class="meta">Born 1919</div>
+              <div class="badges"><span class="badge multi">Multiple sources</span></div>
+            </div>
+            <div class="vertical" style="margin:auto"></div>
+            <div class="children">
+              <div class="child" style="order:1950"><div class="person" data-id="claudia"><div class="name">Claudia Vigneau</div><div class="meta">b. c. 1950<br>Descends from Eugene<br>458 cM with Annette</div><div class="badges"><span class="badge dna">DNA</span></div></div></div>
+            </div>
+          </div>
+          <div class="child">
+            <div class="person" data-id="buzz">
+              <div class="name">Reaford Ulysse &ldquo;Buzz&rdquo; Vigneau</div>
+              <div class="meta">Born 1921</div>
+              <div class="spouse-note">Spouse: June Affholter Vigneau</div>
+              <div class="badges"><span class="badge multi">Multiple sources</span></div>
+            </div>
+            <div style="height:28px"></div>
+            <div class="children">
+              <div class="child" style="order:1947">
+                <div class="person" data-id="mike"><div class="name">Michael &ldquo;Mike&rdquo; Vigneau Sr.</div><div class="meta">b. 1947<br>Child of Buzz + June<br>Eliminated as father candidate</div><div class="badges"><span class="badge dna">DNA anchor</span><span class="badge record">Eliminated</span></div></div>
+                <details class="generation-accordion">
+                  <summary>Show Mike Jr. DNA anchor</summary>
+                  <div class="children"><div class="child"><div class="person" data-id="mike_jr"><div class="name">Mike Vigneau Jr.</div><div class="meta">Confirmed son of Mike Sr.<br>784 cM with Annette<br>DNA anchor</div><div class="badges"><span class="badge dna">DNA anchor</span></div></div></div></div>
+                </details>
+              </div>
+              <div class="child" style="order:1950">
+                <div class="person" data-id="tim"><div class="name">Tim P. Vigneau</div><div class="meta">Aug. 23, 1950 &ndash; Dec. 12, 2016<br>Child of Buzz + June<br>Eliminated as parent candidate</div><div class="spouse-note">Spouse: Tira Vigneau</div><div class="badges"><span class="badge record">2016 obituary</span><span class="badge record">Eliminated</span></div></div>
+                <details class="generation-accordion">
+                  <summary>Show Tim + Tira line</summary>
+                  <div class="children">
+                  <div class="child" style="order:1973">
+                    <div class="person" data-id="lisa_hoffman"><div class="name">Lisa Vigneau Hoffman</div><div class="meta">b. c. 1973<br>Child of Tim + Tira<br>761 cM with Annette</div><div class="spouse-note">Spouse: Doug Hoffman</div><div class="badges"><span class="badge record">2016 obituary</span><span class="badge dna">DNA</span></div></div>
+                    <details class="generation-accordion">
+                      <summary>Show 3 Hoffman children</summary>
+                      <div class="children">
+                      <div class="child" style="order:1999"><div class="person" data-id="marin_hoffman"><div class="name">Marin Hoffman</div><div class="meta">b. c. 1999<br>Child of Lisa + Doug</div></div></div>
+                      <div class="child" style="order:2002"><div class="person" data-id="cole_hoffman"><div class="name">Cole Hoffman</div><div class="meta">b. 2002<br>Child of Lisa + Doug</div></div></div>
+                      <div class="child" style="order:2006"><div class="person" data-id="sydney_hoffman"><div class="name">Sydney Hoffman</div><div class="meta">b. c. 2006<br>Child of Lisa + Doug</div></div></div>
+                      </div>
+                    </details>
+                  </div>
+                  <div class="child" style="order:1975">
+                    <div class="person" data-id="keri_simonis"><div class="name">Keri Vigneau Simonis</div><div class="meta">b. c. 1975<br>Child of Tim + Tira</div><div class="spouse-note">Spouse: John Simonis</div><div class="badges"><span class="badge record">2016 obituary</span></div></div>
+                    <details class="generation-accordion">
+                      <summary>Show 2 Simonis children</summary>
+                      <div class="children">
+                      <div class="child" style="order:2005"><div class="person" data-id="jordan_simonis"><div class="name">Jordan Simonis</div><div class="meta">b. c. 2005<br>Child of Keri + John</div></div></div>
+                      <div class="child" style="order:2008"><div class="person" data-id="sarah_simonis"><div class="name">Sarah Simonis</div><div class="meta">b. c. 2008<br>Child of Keri + John</div></div></div>
+                      </div>
+                    </details>
+                  </div>
+                  <div class="child" style="order:1978">
+                    <div class="person" data-id="paul_vigneau"><div class="name">Paul Vigneau</div><div class="meta">b. c. 1978<br>Child of Tim + Tira</div><div class="spouse-note">Spouse: Jill</div><div class="badges"><span class="badge record">2016 obituary</span></div></div>
+                    <details class="generation-accordion">
+                      <summary>Show 3 Vigneau children</summary>
+                      <div class="children">
+                      <div class="child" style="order:2004"><div class="person" data-id="megan_vigneau"><div class="name">Megan Vigneau</div><div class="meta">b. c. 2004<br>Child of Paul + Jill</div></div></div>
+                      <div class="child" style="order:2008"><div class="person" data-id="andrea_vigneau"><div class="name">Andrea Vigneau</div><div class="meta">b. c. 2008<br>Child of Paul + Jill</div></div></div>
+                      <div class="child" style="order:2006"><div class="person" data-id="natalie_vigneau"><div class="name">Natalie Vigneau</div><div class="meta">b. c. 2006<br>Child of Paul + Jill</div></div></div>
+                      </div>
+                    </details>
+                  </div>
+                  </div>
+                </details>
+              </div>
+              <div class="child" style="order:1954"><div class="person" data-id="jeff"><div class="name">Jeff Vigneau</div><div class="meta">b. c. 1954<br>Child of Buzz + June<br>1,675 cM with Annette</div><div class="badges"><span class="badge dna">DNA</span><span class="badge record">Eliminated</span></div></div></div>
+              <div class="child" style="order:1956">
+                <div class="person strong-candidate" data-id="chris">
+                  <div class="name">Chris Andrew Vigneau</div>
+                  <div class="meta">b. 1956 &middot; Petoskey<br>Petoskey HS cohort with Janet<br>1978 location/job unresolved</div>
+                  <div class="spouse-note">Keri Matchinski &middot; m. 1981</div>
+                  <div class="badges"><span class="badge inference">Strong candidate</span><span class="badge record">1977 Petoskey</span><span class="badge record">A&amp;W softball</span></div>
+                </div>
+                <details class="generation-accordion">
+                  <summary>Show Chris + Keri children</summary>
+                  <div class="children">
+                  <div class="child" style="order:1986"><div class="person" data-id="amanda"><div class="name">Amanda Gilkerson</div><div class="meta">b. 1986<br>Child of Chris + Keri</div><div class="badges"><span class="badge fb">User-confirmed</span></div></div></div>
+                  <div class="child" style="order:1989"><div class="person" data-id="anna"><div class="name">Anna Vigneau</div><div class="meta">b. 1989<br>Child of Chris + Keri</div><div class="badges"><span class="badge fb">User-confirmed</span></div></div></div>
+                  </div>
+                </details>
+                <div class="branch-label">Candidate hypothesis only</div>
+                <div class="children candidate-hypothesis">
+                  <div class="child candidate-hypothesis"><div class="person candidate-child" data-id="wife"><div class="name">Annette (Compeau) Spiece</div><div class="meta">Born Mar. 9, 1979<br>Likely conception: June 1978<br>Hypothesis only</div><div class="badges"><span class="badge inference">Candidate link</span></div></div></div>
+                </div>
+              </div>
+              <div class="child" style="order:1958">
+                <div class="person weaker-candidate" data-id="nina">
+                  <div class="name">Nina Vigneau</div>
+                  <div class="meta">b. 1958<br>Unresolved but weaker</div>
+                  <div class="spouse-note">Spouse: Merle Sievert &mdash; married 1981</div>
+                  <div class="badges"><span class="badge record">Emmet County</span><span class="badge inference">Weaker</span></div>
+                </div>
+                <details class="generation-accordion">
+                  <summary>Show Nina children</summary>
+                  <div class="children">
+                  <div class="child" style="order:1983"><div class="person" data-id="andrews"><div class="name">Andrew Sievert</div><div class="meta">b. c. 1983<br>Child of Nina</div><div class="badges"><span class="badge fb">User-confirmed</span></div></div></div>
+                  <div class="child" style="order:1985"><div class="person" data-id="matts"><div class="name">Matt Sievert</div><div class="meta">b. c. 1985<br>Child of Nina</div><div class="badges"><span class="badge fb">User-confirmed</span></div></div></div>
+                  <div class="child" style="order:1988"><div class="person" data-id="adams"><div class="name">Adam Sievert</div><div class="meta">b. c. 1988<br>Child of Nina</div><div class="badges"><span class="badge fb">User-confirmed</span></div></div></div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="branch-label">Affholter collateral DNA anchor</div>
+        <div class="person" data-id="sally"><div class="name">Sally L. Affholter Kolb</div><div class="meta">1936&ndash;2021<br>June Affholter's sister<br>1,254 cM with Annette</div><div class="badges"><span class="badge multi">Multiple sources</span><span class="badge dna">DNA</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Parent 2 &mdash; Lauer Side</div>
+      <div class="section-subtitle">Confirmed Lauer / Zuber family structure. This branch stays together in one scrollable tree, with spouses nested on the blood-relative cards.</div>
+      <div class="tree wide-tree">
+        <div class="generation">
+          <div class="person" data-id="john">
+            <div class="name">John Lauer</div>
+            <div class="meta">b. c. 1880</div>
+            <div class="spouse-note">Spouse: Christina Catherine Zuber</div>
+            <div class="badges"><span class="badge multi">Multiple sources</span></div>
+          </div>
+        </div>
+        <div class="vertical"></div>
+        <div class="children">
+          <div class="child" style="order:1912">
+            <div class="person" data-id="ernest">
+              <div class="name">Ernest Lauer</div>
+              <div class="meta">b. c. 1912</div>
+              <div class="spouse-note">Spouse: Neva</div>
+            </div>
+            <div style="height:28px"></div>
+            <div class="children"><div class="child" style="order:1947"><div class="person" data-id="george"><div class="name">George Lauer</div><div class="meta">b. c. 1947<br>389 cM with Annette</div><div class="badges"><span class="badge dna">DNA anchor</span></div></div></div></div>
+          </div>
+          <div class="child" style="order:1916">
+            <div class="person" data-id="edward">
+              <div class="name">Edward Henry Lauer</div>
+              <div class="meta">b. 1916</div>
+              <div class="spouse-note">Spouse: Theresa Kruzel</div>
+            </div>
+            <div style="height:28px"></div>
+            <div class="children">
+              <div class="child" style="order:1938"><div class="person" data-id="cecelia"><div class="name">Cecelia Lauer Pemberton</div><div class="meta">b. c. 1938<br>Child of Edward + Theresa<br>Low probability</div><div class="spouse-note">Spouse: Philip Pemberton &mdash; married 1959; five children noted</div><div class="badges"><span class="badge record">1997 obituary</span><span class="badge inference">Low</span></div></div></div>
+              <div class="child" style="order:1950"><div class="person weaker-candidate" data-id="diane"><div class="name">Diane Lauer Hannan</div><div class="meta">b. c. 1950<br>Child of Edward + Theresa<br>Unresolved but weaker</div><div class="spouse-note">Spouse: David Hannan &mdash; married 1968</div><div class="badges"><span class="badge record">1997 obituary</span><span class="badge inference">Weaker</span></div></div></div>
+              <div class="child" style="order:1952">
+                <div class="person" data-id="barbara"><div class="name">Barbara Lauer VanBerlo</div><div class="meta">b. c. 1952<br>Child of Edward + Theresa<br>Eliminated as maternal candidate</div><div class="spouse-note">Spouse: Peter VanBerlo; Elizabeth born Aug. 12, 1978</div><div class="badges"><span class="badge multi">Multiple sources</span><span class="badge record">1997 obituary</span><span class="badge record">Eliminated</span></div></div>
+                <details class="generation-accordion">
+                  <summary>Show Elizabeth</summary>
+                  <div class="children"><div class="child" style="order:1978"><div class="person" data-id="elizabeth"><div class="name">Elizabeth VanBerlo</div><div class="meta">b. Aug. 12, 1978<br>Barbara listed as mother</div><div class="badges"><span class="badge fb">Facebook family listing</span></div></div></div></div>
+                </details>
+              </div>
+              <div class="child" style="order:1956">
+                <div class="person strong-candidate" data-id="janet"><div class="name">Janet K. Lauer</div><div class="meta">likely b. Dec. 1956<br>Petoskey HS '75<br>1978 job/location unresolved</div><div class="spouse-note">Rich Wolf &middot; m. May 1999</div><div class="badges"><span class="badge inference">Strong candidate</span><span class="badge record">1977 Petoskey</span><span class="badge yearbook">Yearbook</span></div></div>
+                <div class="branch-label">Candidate hypothesis only</div>
+                <div class="children candidate-hypothesis">
+                  <div class="child candidate-hypothesis"><div class="person candidate-child" data-id="wife"><div class="name">Annette (Compeau) Spiece</div><div class="meta">Born Mar. 9, 1979<br>Likely conception: June 1978<br>Hypothesis only</div><div class="badges"><span class="badge inference">Candidate link</span></div></div></div>
+                </div>
+              </div>
+              <div class="child" style="order:1958">
+                <div class="person weaker-candidate" data-id="cindy"><div class="name">Cynthia &ldquo;Cindy&rdquo; Lauer Van Berlo</div><div class="meta">b. c. 1958<br>Child of Edward + Theresa<br>Unresolved but weaker</div><div class="spouse-note">Spouse: Martin/Martie Van Berlo &mdash; married June 9, 1979</div><div class="badges"><span class="badge record">1997 obituary</span><span class="badge record">Emmet County</span><span class="badge inference">Weaker</span></div></div>
+                <details class="generation-accordion">
+                  <summary>Show Cindy + Martie children</summary>
+                  <div class="children">
+                  <div class="child" style="order:1984"><div class="person" data-id="alicia"><div class="name">Alicia Huwyler</div><div class="meta">b. c. 1984<br>Daughter of Cindy + Martie</div><div class="badges"><span class="badge multi">Multi-source</span></div></div></div>
+                  <div class="child" style="order:1990"><div class="person" data-id="nick"><div class="name">Nicholas &ldquo;Nick&rdquo; Van Berlo</div><div class="meta">b. c. 1990<br>Son of Cindy + Martie</div><div class="badges"><span class="badge multi">Multi-source</span></div></div></div>
+                  </div>
+                </details>
+              </div>
+              <div class="child" style="order:1948"><div class="person" data-id="patricia_edward"><div class="name">Patricia Ann Lauer</div><div class="meta">Feb. 14, 1948 &ndash; July 18, 1949<br>Child of Edward + Theresa<br>Eliminated</div><div class="badges"><span class="badge record">1997 obituary</span><span class="badge record">Eliminated</span></div></div></div>
+              <div class="child" style="order:1946"><div class="person weaker-candidate" data-id="catherine"><div class="name">Catherine Lauer</div><div class="meta">b. c. 1946?<br>Child of Edward + Theresa<br>Unresolved but weaker</div><div class="badges"><span class="badge record">1997 obituary</span><span class="badge inference">Weaker</span></div></div></div>
+              <div class="child" style="order:1939"><div class="person" data-id="james"><div class="name">James Lauer</div><div class="meta">b. 1939<br>Child of Edward + Theresa<br>Low probability</div><div class="badges"><span class="badge record">1997 obituary</span><span class="badge inference">Low</span></div></div></div>
+              <div class="child" style="order:1942"><div class="person" data-id="lawrence"><div class="name">Lawrence &ldquo;Larry&rdquo; Lauer</div><div class="meta">b. 1942<br>Child of Edward + Theresa<br>Low probability</div><div class="badges"><span class="badge record">1997 obituary</span><span class="badge inference">Low</span></div></div></div>
+              <div class="child" style="order:1945">
+                <div class="person" data-id="richard"><div class="name">Richard &ldquo;Dick&rdquo; Lauer</div><div class="meta">b. 1945<br>Child of Edward + Theresa<br>Eliminated as father candidate</div><div class="spouse-note">Spouse: Betty Lauer; Lori resolved as their child</div><div class="badges"><span class="badge multi">Multiple sources</span><span class="badge dna">DNA fit</span><span class="badge record">Eliminated</span></div></div>
+                <details class="generation-accordion">
+                  <summary>Show Richard + Betty line</summary>
+                  <div class="children">
+                  <div class="child">
+                    <div class="person" data-id="lori"><div class="name">Lori Lauer-Totten</div><div class="meta">Confirmed child<br>Born May 1966<br>739 cM with Annette</div><div class="spouse-note">Spouse/co-parent: Tom Totten</div><div class="badges"><span class="badge record">User-confirmed</span><span class="badge dna">DNA</span><span class="badge fb">Facebook family listing</span></div></div>
+                    <details class="generation-accordion">
+                      <summary>Show Lori + Tom children</summary>
+                      <div class="children">
+                      <div class="child" style="order:1995"><div class="person" data-id="jessica"><div class="name">Jessica Totten</div><div class="meta">b. c. 1995<br>272 cM with Annette</div><div class="badges"><span class="badge dna">DNA</span><span class="badge fb">Facebook</span></div></div></div>
+                      <div class="child" style="order:1989"><div class="person" data-id="brandon"><div class="name">Brandon Totten</div><div class="meta">b. 1989</div><div class="badges"><span class="badge fb">Facebook</span></div></div></div>
+                      <div class="child" style="order:1990"><div class="person" data-id="kyle"><div class="name">Kyle Totten</div><div class="meta">b. 1990</div><div class="badges"><span class="badge fb">Facebook</span></div></div></div>
+                      </div>
+                    </details>
+                  </div>
+                  </div>
+                </details>
+              </div>
+              <div class="child" style="order:1954">
+                <div class="person" data-id="timothy_lauer"><div class="name">Timothy Lauer</div><div class="meta">b. 1954<br>Child of Edward + Theresa<br>Low probability</div><div class="spouse-note">Spouse: Linda &mdash; married 1976; child Anthony born June 1977</div><div class="badges"><span class="badge record">1997 obituary</span><span class="badge inference">Low</span></div></div>
+                <details class="generation-accordion">
+                  <summary>Show Anthony</summary>
+                  <div class="children"><div class="child" style="order:1977"><div class="person" data-id="anthony_lauer"><div class="name">Anthony Lauer</div><div class="meta">b. June 1977<br>Child of Timothy + Linda</div></div></div></div>
+                </details>
+              </div>
+            </div>
+          </div>
+          <div class="child" style="order:1913">
+            <div class="person" data-id="robert"><div class="name">Robert Lauer Sr.</div><div class="meta">b. 1913<br>Brother of Edward H. Lauer<br>Bridge to Donald branch</div><div class="spouse-note">Spouse in branch notes: Elsie Hunsberger</div><div class="badges"><span class="badge record">1981 obituary</span><span class="badge multi">Reconstructed branch</span></div></div>
+            <div style="height:28px"></div>
+            <div class="children">
+              <div class="child" style="order:1938">
+                <div class="person" data-id="donald"><div class="name">Donald Lauer</div><div class="meta">b. c. 1938<br>Child of Robert + Elsie</div><div class="spouse-note">Spouse: Velda Krieger / Peterson</div></div>
+                <details class="generation-accordion">
+                  <summary>Show Donald + Velda line</summary>
+                  <div class="children">
+                  <div class="child" style="order:1958"><div class="person" data-id="patty"><div class="name">Patricia &ldquo;Patty&rdquo; Lauer Bek</div><div class="meta">b. c. 1958<br>Child of Donald + Velda<br>Eliminated as biological-parent candidate</div><div class="badges"><span class="badge record">Marriage/family line</span></div></div></div>
+                  <div class="child" style="order:1959"><div class="person" data-id="bryan"><div class="name">Bryan Glen Lauer</div><div class="meta">Aug. 9, 1959 &ndash; Sept. 26, 2025<br>Child of Donald + Velda<br>Eliminated as biological-parent candidate</div><div class="badges"><span class="badge multi">Recovered obituary notes</span><span class="badge record">Family line</span></div></div><details class="generation-accordion"><summary>Show Bryan children</summary><div class="children"><div class="child" style="order:1994"><div class="person" data-id="peter"><div class="name">Peter Lauer</div><div class="meta">b. 1994<br>Child of Bryan</div></div></div><div class="child" style="order:1995"><div class="person" data-id="morgan"><div class="name">Morgan Lauer</div><div class="meta">b. 1995<br>Child of Bryan</div></div></div></div></details></div>
+                  <div class="child" style="order:1968"><div class="person" data-id="scott"><div class="name">Scott Lauer</div><div class="meta">b. Sept. 1968<br>Child of Donald + Velda<br>Eliminated as biological-parent candidate</div><div class="badges"><span class="badge record">Court record</span></div></div></div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- EVIDENCE -->
+  <div id="evidence" class="view">
+    <div class="card">
+      <div class="section-title">Key DNA Relationships</div>
+      <table class="dna-table">
+        <thead><tr><th>People</th><th>Shared DNA / relationship</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td>Annette (Compeau) Spiece  <->  Lori Lauer-Totten</td><td>739 cM</td><td>Strong close Lauer-side anchor.</td></tr>
+          <tr><td>Annette (Compeau) Spiece  <->  George Lauer</td><td>389 cM</td><td>Connects Annette to the broader Lauer/Zuber network.</td></tr>
+          <tr><td>Annette (Compeau) Spiece  <->  Jessica Totten</td><td>272 cM</td><td>Supports Lori's family branch across another generation.</td></tr>
+          <tr><td>Lori Lauer-Totten  <->  Jessica Totten</td><td>3,435 cM</td><td>Consistent with their documented mother/daughter relationship.</td></tr>
+          <tr><td>Lori Lauer-Totten  <->  George Lauer</td><td>360 cM</td><td>Places Lori in the broader Lauer family DNA network.</td></tr>
+          <tr><td>Sally Kolb  <->  Jeff Vigneau</td><td>about 1,945 cM</td><td>Independent support for Sally as Jeff's maternal aunt.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Facebook Relationship Evidence</div>
+      <div class="relationship-grid">
+        <div class="relationship-box"><div class="who">Brandon Totten's family listing</div><div><strong>Mother:</strong> Lori Lauer-Totten</div><div><strong>Father:</strong> Tom Totten</div><div><strong>Sister:</strong> Jessica Totten</div><div><strong>Brother:</strong> Kyle Totten</div></div>
+        <div class="relationship-box"><div class="who">Elizabeth VanBerlo's family listing</div><div><strong>Mother:</strong> Barbara VanBerlo</div><div><strong>Uncle:</strong> Martie Van Berlo</div><div><strong>Grandmother:</strong> Suzanna Van Berlo</div><div><strong>Cousin:</strong> Lori Lauer-Totten</div><div><strong>Aunts:</strong> Suzanne Montgomery, Carol French Lauer, Betty Lauer, Martina Vandekerkhof, Annie Donkers-van Der Hoek</div></div>
+        <div class="relationship-box"><div class="who">Andrew Sievert's family listing</div><div><strong>Brothers:</strong> Matt Sievert, Adam Sievert</div><div><strong>Cousin:</strong> Dutch Sievert</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Record-Based Dates</div>
+      <div class="evidence-grid">
+        <div class="evidence-card"><h3>Nina Vigneau + Merle Sievert</h3><div class="source">Emmet County marriage record</div><ul><li>Married in 1981.</li></ul></div>
+        <div class="evidence-card"><h3>Edward H. Lauer + Theresa Kruzel</h3><div class="source">Edward H. Lauer 1997 obituary</div><ul><li>Identifies 11 children: Cecelia, Diane, Barbara, Janet, Cynthia/Cindy, Patricia, Catherine, James, Lawrence, Richard, and Timothy.</li><li>Donald/Velda remain in Robert Lauer Sr.'s separate brother branch.</li></ul></div>
+        <div class="evidence-card"><h3>Cynthia "Cindy" Lauer + Martie Van Berlo</h3><div class="source">Emmet County marriage record</div><ul><li>Married in June 1979.</li></ul></div>
+        <div class="evidence-card"><h3>Lori Lauer-Totten</h3><div class="source">Court-record birth information</div><ul><li>Born May 1966.</li></ul></div>
+        <div class="evidence-card"><h3>Scott Lauer</h3><div class="source">Court-record birth information</div><ul><li>Born September 1968.</li></ul></div>
+        <div class="evidence-card"><h3>Annette (Compeau) Spiece</h3><div class="source">Court-record birth information</div><ul><li>Born 1979.</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCOVERY -->
+  <div id="discovery" class="view">
+    <div class="card">
+      <div class="section-title">How Janet and Cindy Became Candidates</div>
+      <div class="section-subtitle">This tab shows the reasoning path. Boxes with solid borders are evidence. Dashed yellow boxes and arrows show inference. Janet and Cindy are candidates because of the combined pattern - not because a parent-child relationship has been proven.</div>
+
+      <div class="discovery-wrap">
+        <div class="discovery">
+          <div class="flow-box dna-step">
+            <h3>1. DNA Anchors</h3>
+            <p><strong>Lori 739 cM</strong><br><strong>George 389 cM</strong><br><strong>Jessica 272 cM</strong><br>Lori  <->  George 360 cM</p>
+          </div>
+          <div><div class="arrow"></div></div>
+
+          <div class="flow-box record-step">
+            <h3>2. Lauer / Zuber Network</h3>
+            <p>The shared DNA and reconstructed pedigree place the Annette in the broader Lauer/Zuber family network.</p>
+          </div>
+          <div><div class="arrow"></div></div>
+
+          <div class="flow-box fb-step">
+            <h3>3. Facebook Relationship Clue</h3>
+            <p>Elizabeth VanBerlo explicitly lists <strong>Barbara as mother</strong> and <strong>Lori as cousin</strong>.</p>
+          </div>
+          <div><div class="arrow"></div><div class="inference-label">Inference</div></div>
+
+          <div class="flow-box reason-step">
+            <h3>4. Candidate Generation</h3>
+            <p>Lori appears to belong in the same extended Lauer family. We then examined women in the appropriate generation whose age, location and 1979 timeline could fit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="candidate-area">
+        <div class="candidate-card">
+          <div class="status">Candidate  -  not proven</div>
+          <h3>Janet Lauer Wolf</h3>
+          <ul>
+            <li>Verified daughter in the Edward Henry Lauer / Theresa Kruzel family.</li>
+            <li>Belongs to the generation indicated by the Lauer-side evidence.</li>
+            <li>Age/timeline is compatible with a child born in 1979.</li>
+            <li>Her exact 1978-1979 location and circumstances remain less well documented.</li>
+          </ul>
+        </div>
+
+        <div class="candidate-card">
+          <div class="status">Candidate  -  not proven</div>
+          <h3>Cynthia "Cindy" Lauer Van Berlo</h3>
+          <ul>
+            <li>Verified daughter in the Edward Henry Lauer / Theresa Kruzel family.</li>
+            <li>Belongs to the generation indicated by the Lauer-side evidence.</li>
+            <li>Petoskey-area school/timeline evidence placed her in the correct age and geographic window.</li>
+            <li>Emmet County records show she married Martie Van Berlo in <strong>June 1979</strong>, making her 1979 timeline especially relevant.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="path-summary">
+        <div class="path-node">DNA</div><div class="path-arrow"> -> </div>
+        <div class="path-node">Lauer Family Network</div><div class="path-arrow"> -> </div>
+        <div class="path-node">Facebook Cousin Clue</div>
+      </div>
+      <div class="path-summary">
+        <div class="path-node">Generation / Age Filter</div><div class="path-arrow"> -> </div>
+        <div class="path-node">1978-1979 Timeline</div><div class="path-arrow"> -> </div>
+        <div class="path-node">Janet &amp; Cindy Elevated</div>
+      </div>
+
+      <div class="boundary"><strong>Important evidence boundary:</strong> the Facebook cousin label and DNA network tell us that Lori belongs in this extended Lauer family, but they do not identify Lori's exact parent. Janet and Cindy were therefore elevated as <em>research candidates</em> based on family position, generation, age and timeline. The base family tree deliberately does not draw either woman as the Annette's biological parent.</div>
+    </div>
+  </div>
+</div>
+
+<div class="detail" id="detail">
+  <button class="close" id="closeDetail">Close</button>
+  <h3 id="detailName"></h3>
+  <div class="sources" id="detailSource"></div>
+  <div class="detail-body" id="detailFacts"></div>
+</div>
+
+<script>
+const details={
+  ulysses:['Multiple-source genealogy verification',['Spouse of Florence Mayville.','Father generation containing Eugene and Buzz Vigneau.']],
+  florence:['Multiple-source genealogy verification',['Spouse of Ulysses / Ullysse J. Vigneau.']],
+  eugene:['Multiple sources',['Born 1919.','Brother of Buzz Vigneau.','Claudia Vigneau descends from his line.']],
+  claudia:['Ancestry tree + reconstructed pedigree',['Descends from Eugene J. Vigneau.','Provides an independent Vigneau branch.']],
+  buzz:['Multiple sources',['Born 1921.','Spouse of June Affholter.','Parent generation of Tim, Mike, Jeff, Chris and Nina.']],
+  june:['Multiple-source family reconstruction',['Spouse of Buzz Vigneau.','Sister of Sally L. Affholter Kolb.']],
+  tim:['Verified family structure + 2016 obituary + elimination status',['Tim P. Vigneau was born August 23, 1950 and died December 12, 2016.','Child of Buzz and June Vigneau.','His 2016 obituary identifies Tira Vigneau as his wife and lists children Lisa Vigneau Hoffman, Keri Vigneau Simonis, and Paul Vigneau.','Eliminated as a biological-parent candidate in the candidate registry; original elimination evidence still needs recovery.']],
+  lisa_hoffman:['Tim P. Vigneau 2016 obituary',['Child of Tim P. Vigneau and Tira Vigneau.','Married Doug Hoffman.','The obituary names Marin, Cole, and Sydney Hoffman as grandchildren in this branch.']],
+  marin_hoffman:['Tim P. Vigneau 2016 obituary',['Grandchild of Tim P. Vigneau and Tira Vigneau.','Shown under Lisa Vigneau Hoffman and Doug Hoffman based on the obituary branch grouping.']],
+  cole_hoffman:['Tim P. Vigneau 2016 obituary',['Grandchild of Tim P. Vigneau and Tira Vigneau.','Shown under Lisa Vigneau Hoffman and Doug Hoffman based on the obituary branch grouping.']],
+  sydney_hoffman:['Tim P. Vigneau 2016 obituary',['Grandchild of Tim P. Vigneau and Tira Vigneau.','Shown under Lisa Vigneau Hoffman and Doug Hoffman based on the obituary branch grouping.']],
+  keri_simonis:['Tim P. Vigneau 2016 obituary',['Child of Tim P. Vigneau and Tira Vigneau.','Married John Simonis.','The obituary names Jordan and Sarah Simonis as grandchildren in this branch.']],
+  jordan_simonis:['Tim P. Vigneau 2016 obituary',['Grandchild of Tim P. Vigneau and Tira Vigneau.','Shown under Keri Vigneau Simonis and John Simonis based on the obituary branch grouping.']],
+  sarah_simonis:['Tim P. Vigneau 2016 obituary',['Grandchild of Tim P. Vigneau and Tira Vigneau.','Shown under Keri Vigneau Simonis and John Simonis based on the obituary branch grouping.']],
+  paul_vigneau:['Tim P. Vigneau 2016 obituary',['Child of Tim P. Vigneau and Tira Vigneau.','Married Jill.','The obituary names Megan, Andrea, and Natalie Vigneau as grandchildren in this branch.']],
+  megan_vigneau:['Tim P. Vigneau 2016 obituary',['Grandchild of Tim P. Vigneau and Tira Vigneau.','Shown under Paul Vigneau and Jill based on the obituary branch grouping.']],
+  andrea_vigneau:['Tim P. Vigneau 2016 obituary',['Grandchild of Tim P. Vigneau and Tira Vigneau.','Shown under Paul Vigneau and Jill based on the obituary branch grouping.']],
+  natalie_vigneau:['Tim P. Vigneau 2016 obituary',['Grandchild of Tim P. Vigneau and Tira Vigneau.','Shown under Paul Vigneau and Jill based on the obituary branch grouping.']],
+  mike:['Verified family structure + elimination status',['Michael “Mike” Vigneau Sr. was born in 1947.','Child of Buzz and June Vigneau.','Confirmed son Mike Vigneau Jr. shares 784 cM, about 11%, with Annette.','That amount is inconsistent with the half-sibling relationship Mike Jr. and Annette would have if Mike Sr. were Annette’s father.']],
+  mike_jr:['Confirmed descendant DNA anchor',['Confirmed son of Mike Vigneau Sr.','Shares 784 cM, about 11%, with Annette.','Used as the DNA anchor for keeping Mike Sr. eliminated as Annette’s father candidate.']],
+  jeff:['Verified family structure + DNA + elimination status',['Child of Buzz and June Vigneau.','Sally Kolb shares about 1,945 cM with Jeff.','Eliminated as a biological-parent candidate in the candidate registry; uncle-level placement is an interpretation from DNA plus pedigree, not an Ancestry label.']],
+  chris:['Chris Andrew Vigneau — compact candidate summary',['b. 1956 · Petoskey.','Petoskey HS cohort with Janet.','Petoskey confirmed throughout 1977; A&W softball, 1977.','Keri Matchinski · married 1981.','Unresolved: 1978 location/job.']],
+  amanda:['User-confirmed child of Chris + Keri',['Confirmed by the user as a child of Chris Vigneau and Keri Matchinski.','Shown below Chris because Keri is married into the Vigneau line and is nested on Chris’s card.']],
+  anna:['User-confirmed child of Chris + Keri',['Confirmed by the user as a child of Chris Vigneau and Keri Matchinski.','Shown below Chris because Keri is married into the Vigneau line and is nested on Chris’s card.']],
+  nina:['Verified family structure + Emmet County record + weaker candidate status',['b. 1958.','Child of Buzz and June Vigneau.','Married Merle Sievert in 1981.','Investigated as a possible parent candidate; now unresolved but weaker.']],
+  andrews:['User-confirmed child of Nina',['Confirmed by the user as a child of Nina Vigneau.','Shown below Nina because Merle Sievert is married into the Vigneau line and is nested on Nina’s card.']],
+  matts:['User-confirmed child of Nina',['Confirmed by the user as a child of Nina Vigneau.','Shown below Nina because Merle Sievert is married into the Vigneau line and is nested on Nina’s card.']],
+  adams:['User-confirmed child of Nina',['Confirmed by the user as a child of Nina Vigneau.','Shown below Nina because Merle Sievert is married into the Vigneau line and is nested on Nina’s card.']],
+  sally:['Multiple sources + DNA',['1936-2021.','Sister of June Affholter Vigneau.','Shares about 1,945 cM with Jeff Vigneau.']],
+  john:['Multiple-source Lauer/Zuber reconstruction',['Spouse of Christina Catherine Zuber.']],
+  christina:['Multiple-source Lauer/Zuber reconstruction',['Spouse of John Lauer.']],
+  ernest:['Verified pedigree reconstruction',['Part of the Lauer branch containing George Lauer.']],
+  neva:['Verified pedigree reconstruction',['Spouse in the Ernest Lauer branch.']],
+  george:['Pedigree reconstruction + Ancestry DNA',['Born about 1947.','Annette (Compeau) Spiece shares 389 cM with George.','Lori shares 360 cM with George.']],
+  edward:['1997 obituary + multiple documentary sources',['Spouse of Theresa Kruzel.','Edward H. Lauer’s 1997 obituary identifies 11 children: Cecelia, Diane, Barbara, Janet, Cynthia/Cindy, Patricia, Catherine, James, Lawrence, Richard, and Timothy.','Donald Lauer is not shown as Edward’s child; he remains in the Robert/Elsie branch.']],
+  theresa:['1997 obituary + multiple documentary sources',['Spouse of Edward Henry Lauer.','Edward H. Lauer’s 1997 obituary identifies Theresa and Edward’s 11-child family structure.']],
+  cecelia:['Edward H. Lauer 1997 obituary + candidate classification',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Married Philip Pemberton in 1959 and had five children.','Classified low probability, not absolutely excluded: long-established family situation by 1978 and no evidence found connecting her to Chris.']],
+  diane:['Edward H. Lauer 1997 obituary + candidate classification',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Married David Hannan in 1968.','Not eliminated: no biological impossibility or enough 1978 location evidence was found to exclude her. She remains unresolved but weaker than Janet/Cindy.']],
+  barbara:['1997 obituary + Facebook family listing + elimination analysis',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Married Peter VanBerlo.','Elizabeth VanBerlo explicitly lists Barbara as her mother.','Eliminated as Annette’s maternal candidate if Elizabeth’s August 12, 1978 birth is confirmed.']],
+  richard:['Resolved Lori parentage + DNA fit',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Lori is confirmed as Richard and Betty’s child.','Eliminated as Annette’s father candidate: Annette’s 739 cM relationship to Lori supports descent through another Lauer sibling line.']],
+  betty:['User-confirmed parentage + family evidence',['Parent of Lori Lauer-Totten with Richard Lauer.','Elizabeth VanBerlo family evidence also identifies Betty Lauer in the extended family as an aunt.']],
+  janet:['Janet K. Lauer — compact candidate summary',['Petoskey HS ’75.','NCMC ’77 · Associate of Commerce.','927 Kalamazoo St., Petoskey · 1977.','Rich Wolf · married May 1999.','Unresolved: 1978 job/location.']],
+  cindy:['1997 obituary + Emmet County record + supporting family evidence',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Investigated as a maternal-side candidate; now unresolved but weaker.','Working at Fochtman Motor Co. in Petoskey in September 1978; engaged to Martin Van Berlo and married June 9, 1979.','Her Petoskey location fits the pregnancy window, but she is no longer carried as a leading candidate.']],
+  patricia_edward:['Edward H. Lauer 1997 obituary + vital dates',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Patricia Ann Lauer was born February 14, 1948 and died July 18, 1949.','Eliminated as Annette’s mother.','Kept separate from Patricia “Patty” Lauer Bek in Donald and Velda’s branch.']],
+  catherine:['Edward H. Lauer 1997 obituary + unresolved status',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Edward’s obituary says Catherine predeceased him.','Unclear / needs resolution: no death date is stored here proving she was deceased before 1978, so she should not be called eliminated yet.']],
+  james:['Edward H. Lauer 1997 obituary + candidate classification',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Low but not definitively excluded.','Evidence placed him around Kentwood, Michigan, away from Petoskey; no hard biological exclusion has been found.']],
+  lawrence:['Edward H. Lauer 1997 obituary + candidate classification',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Very low probability, not absolutely excluded.','Evidence placed him moving to Clearwater, Florida around 1975, making him geographically much less plausible for the Petoskey 1978 conception window.']],
+  timothy_lauer:['Edward H. Lauer 1997 obituary + candidate classification',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Weaker father candidate.','Married Linda in 1976 and had a child, Anthony, in June 1977.','Biologically possible, but established family situation plus lack of DNA/timeline evidence makes him weaker.']],
+  anthony_lauer:['Timothy Lauer family evidence',['Child of Timothy Lauer and Linda.','Born June 1977.','Included to show Timothy’s established family context; not a parent candidate.']],
+  alicia:['Multi-source descendant identification',['Daughter of Cynthia "Cindy" Lauer Van Berlo and Martie Van Berlo.','Supported by Martie Van Berlo Facebook statements and independent Van Berlo family obituary evidence.']],
+  nick:['Multi-source descendant identification',['Son of Cynthia "Cindy" Lauer Van Berlo and Martie Van Berlo.','Supported by Martie Van Berlo Facebook statements and independent Van Berlo family obituary evidence.']],
+  elizabeth:['Facebook family listing + supporting family records',['Lists Barbara VanBerlo as mother.','Lists Lori Lauer-Totten as cousin.','Lists Martie Van Berlo as uncle.','Lists Suzanna Van Berlo as grandmother.']],
+  lori:['Court-record birth information + confirmed parentage + Facebook family evidence + DNA',['Born May 1966.','Confirmed child of Richard Lauer and Betty Lauer.','Annette (Compeau) Spiece shares 739 cM with Lori.','Lori remains a key DNA intermediary; Annette’s exact biological parents remain unresolved.']],
+  tom:['Facebook family listing',['Brandon Totten lists Tom as father and Lori as mother.']],
+  jessica:['Facebook family listing + DNA',['Daughter of Lori Lauer-Totten.','Annette (Compeau) Spiece shares 272 cM with Jessica.']],
+  brandon:['Facebook family listing',['Lists Lori as mother.','Lists Tom Totten as father.','Lists Jessica as sister.','Lists Kyle as brother.']],
+  kyle:['Facebook family listing',['Listed by Brandon Totten as his brother.']],
+  robert:['Robert Lauer Sr. 1981 obituary + reconstructed branch placement',['Robert Lauer Sr.’s 1981 obituary explicitly names Edward H. Lauer of Petoskey as Robert’s brother.','Robert is shown as the bridge into Donald Lauer’s branch.','Elsie Hunsberger is nested on Robert’s card as spouse context from branch notes.','This keeps Donald, Patty, Bryan, and Scott in the correct downstream branch instead of placing Donald beside Edward’s children.']],
+  donald:['Verified family reconstruction',['Spouse of Velda Krieger / Peterson.']],
+  velda:['Verified family reconstruction',['Spouse of Donald Lauer.']],
+  patty:['Verified family reconstruction + elimination analysis',['b. 1958.','Child of Donald Lauer and Velda Krieger / Peterson.','Sibling of Bryan Glen Lauer and Scott Lauer.','Eliminated as a biological-parent candidate for Annette based on the confirmed Lori-to-Richard/Betty family line plus Patty’s marriage and children context.']],
+  bryan:['Verified family reconstruction + elimination analysis',['Child of Donald Lauer and Velda Krieger / Peterson.','Sibling of Patty Lauer Bek and Scott Lauer.','Parent of Peter and Morgan Lauer.','Eliminated as a biological-parent candidate for Annette based on family line and children context.']],
+  scott:['Court-record birth information + family reconstruction',['Born September 1968.','Eliminated as a biological-parent candidate on chronological grounds because Scott was approximately 10-11 years old during the relevant conception and birth period.']],
+  peter:['Verified family reconstruction',['Child of Bryan Glen Lauer.']],
+  morgan:['Verified family reconstruction',['Child of Bryan Glen Lauer.']],
+  wife:['Annette timeline context',['Annette (Compeau) Spiece was born March 9, 1979.','Likely conception: June 1978.','Shown under Chris and Janet as a strongest-current-candidate hypothesis only, not confirmed parentage.']]
+};
+
+const popupExtras={
+  claudia:{'DNA match numbers':['Annette (Compeau) Spiece ↔ Claudia Vigneau: 458 cM.']},
+  mike:{'DNA anchor':['Mike Vigneau Jr. is the confirmed son used as the DNA anchor for Mike Sr.’s elimination.','Annette (Compeau) Spiece ↔ Mike Vigneau Jr.: 784 cM, about 11%.','This is inconsistent with Mike Jr. and Annette being half-siblings if Mike Sr. were Annette’s father.'],'Additional DNA match number':['Sally Kolb ↔ Mike Vigneau Jr.: 860 cM.']},
+  mike_jr:{'DNA match numbers':['Annette (Compeau) Spiece ↔ Mike Vigneau Jr.: 784 cM, about 11%.','Sally Kolb ↔ Mike Vigneau Jr.: 860 cM.'],'Evidence boundary':['Mike Jr. anchors Mike Sr.’s elimination; he is not a parent candidate.']},
+  jeff:{'DNA match numbers':['Annette (Compeau) Spiece ↔ Jeffrey M. Vigneau: 1,675 cM.','Sally Kolb ↔ Jeff Vigneau: 1,945 cM.','Boundary: the uncle-level placement is interpreted from cM values plus the reconstructed pedigree, not an Ancestry label.']},
+  sally:{'DNA match numbers':['Annette (Compeau) Spiece ↔ Sally Kolb: 1,254 cM.','Sally Kolb ↔ Jeff Vigneau: 1,945 cM.','Sally Kolb ↔ Mike Vigneau Jr.: 860 cM.','Sally Kolb ↔ Lisa Hoffman: 1,094 cM.','laurieqkk1965 ↔ Sally Kolb: 1,765 cM.']},
+  lisa_hoffman:{'DNA match numbers':['Annette (Compeau) Spiece ↔ Lisa Hoffman: 761 cM.','Sally Kolb ↔ Lisa Hoffman: 1,094 cM.']},
+  lori:{'DNA match numbers':['Annette (Compeau) Spiece ↔ Lori Lauer-Totten: 739 cM.','Lori Lauer-Totten ↔ Jessica Totten: 3,435 cM.','Lori Lauer-Totten ↔ George Lauer: 360 cM.','Annette ↔ Jessica Totten: 272 cM.'],'Facebook / record evidence':['Brandon Totten’s family listing identifies Lori as mother, Tom Totten as father, Jessica as sister, and Kyle as brother.','Lori is now resolved as the confirmed child of Richard Lauer and Betty Lauer.'],'Evidence boundary':['Resolving Lori’s parents strengthens the Lauer-side placement, but it does not identify Annette’s exact biological parent.']},
+  george:{'DNA match numbers':['Annette (Compeau) Spiece ↔ George Lauer: 389 cM.','Lori Lauer-Totten ↔ George Lauer: 360 cM.']},
+  jessica:{'DNA match numbers':['Annette (Compeau) Spiece ↔ Jessica Totten: 272 cM.','Lori Lauer-Totten ↔ Jessica Totten: 3,435 cM.'],'Facebook evidence':['Brandon Totten’s family listing identifies Jessica as his sister and Lori as mother.']},
+  brandon:{'Facebook evidence':['Brandon Totten’s family listing identifies Lori Lauer-Totten as mother, Tom Totten as father, Jessica Totten as sister, and Kyle Totten as brother.']},
+  kyle:{'Facebook evidence':['Brandon Totten’s family listing identifies Kyle as brother in the Lori/Tom Totten family unit.']},
+  elizabeth:{'Facebook evidence':['Elizabeth VanBerlo explicitly lists Barbara VanBerlo as mother.','Elizabeth lists Lori Lauer-Totten as cousin.','Elizabeth lists Martie Van Berlo as uncle and Suzanna Van Berlo as grandmother.','Aunts shown include Suzanne Montgomery, Carol French Lauer, Betty Lauer, Martina Vandekerkhof, and Annie Donkers-van Der Hoek.'],'Evidence boundary':['Elizabeth’s cousin label supports the extended Lauer network, but by itself does not identify Annette’s biological parent.']},
+  andrews:{'Facebook evidence':['Andrew’s Facebook family section explicitly identifies Matt Sievert and Adam Sievert as brothers and Dutch Sievert as cousin.']},
+  nina:{'Record evidence':['Emmet County record: Nina Vigneau married Merle Sievert in 1981.','User confirmation identifies Andrew, Matt, and Adam as Nina’s children.'],'Candidate status':['Unresolved but weaker.','A 1981 marriage does not by itself exclude a 1979 birth, but Nina is no longer carried as a leading candidate.']},
+  chris:{'Candidate boundary':['Strong current paternal candidate; not a confirmed biological parent.','Open question: where was Chris living and working in summer 1978?']},
+  janet:{'Candidate boundary':['Still in play / leading historical candidate; not a proven biological parent.','Open question: where did Janet live and work between June 1977 and summer 1978?']},
+  cindy:{'How candidate was found':['Lauer DNA anchors include Lori 739 cM, George 389 cM, Jessica 272 cM, and Lori ↔ George 360 cM.','Cindy is in Edward and Theresa’s child generation.','Yearbooks place Cindy in relevant Petoskey High School cohorts with Nina Vigneau in 1973, 1974, and 1975, and in Petoskey High School activities in 1976.','September 1978 evidence places Cindy working at Fochtman Motor Co. in Petoskey.','Cindy married Martin/Martie Van Berlo on June 9, 1979.'],'Evidence boundary':['Unresolved but weaker; not a proven biological parent and no longer a leading candidate.']},
+  richard:{'DNA / elimination reasoning':['Lori Lauer-Totten is resolved as Richard and Betty’s child.','Annette’s 739 cM relationship to Lori is inconsistent with Richard also being Annette’s father.'],'Evidence boundary':['Eliminated as father candidate unless a stronger DNA model contradicts Lori’s resolved placement.']},
+  edward:{'Record evidence':['Edward H. Lauer’s 1997 obituary identifies 11 children with Theresa: Cecelia, Diane, Barbara, Janet, Cynthia/Cindy, Patricia, Catherine, James, Lawrence, Richard, and Timothy.']},
+  robert:{'Record evidence':['Robert Lauer Sr.’s 1981 obituary explicitly names Edward H. Lauer of Petoskey as his brother.','That brother relationship ties Robert → Donald → Patty into the same Lauer/Zuber family as Janet and Cindy.']},
+  scott:{'Exclusion evidence':['Court-record birth information places Scott’s birth in September 1968.','Annette was born in 1979, making Scott approximately 10–11 years old during the relevant conception/birth period.']},
+  wife:{'Candidate hypothesis display':['Displayed under Chris and Janet because they are the strongest current candidate pair.','The dashed connector/card means hypothesis only; this is not a confirmed parent-child relationship.','No direct evidence has been found that Chris and Janet dated or had a romantic relationship.'],'DNA anchors':['Annette ↔ Lori Lauer-Totten: 739 cM.','Annette ↔ George Lauer: 389 cM.','Annette ↔ Jessica Totten: 272 cM.','Annette ↔ Jeffrey M. Vigneau: 1,675 cM.','Annette ↔ Sally Kolb: 1,254 cM.','Annette ↔ Lisa Hoffman: 761 cM.']}
+};
+
+const renderSection=(title,items)=>items&&items.length?`<section class="detail-section"><h4>${title}</h4><ul>${items.map(x=>`<li>${x}</li>`).join('')}</ul></section>`:'';
+
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.tab).classList.add('active');
+}));
+
+document.addEventListener('click',event=>{
+  const node=event.target.closest('.person[data-id]');
+  if(!node)return;
+  const id=node.dataset.id,d=details[id]; if(!d)return;
+  document.getElementById('detailName').textContent=node.querySelector('.name')?.textContent||id;
+  document.getElementById('detailSource').textContent='Evidence: '+d[0];
+  const extra=popupExtras[id]||{};
+  document.getElementById('detailFacts').innerHTML=renderSection('Person evidence',d[1])+Object.entries(extra).map(([title,items])=>renderSection(title,items)).join('');
+  document.getElementById('detail').classList.add('show');
+});
+document.getElementById('treeInfoBtn')?.addEventListener('click',()=>{
+  document.getElementById('detailName').textContent='How to read this family tree';
+  document.getElementById('detailSource').textContent='Guide: colors, evidence, and candidate links';
+  document.getElementById('detailFacts').innerHTML=[
+    renderSection('Tree structure',[
+      'Each main card is the blood-line relative for that branch.',
+      'People who married into the family are shown on the blood-relative card as spouse context.',
+      'Children appear below the parent card they are attached to.'
+    ]),
+    renderSection('Color meanings',[
+      'Purple cards mark the strongest current candidate parents: Chris Vigneau and Janet K. Lauer.',
+      'Orange cards mark unresolved but weaker people such as Nina Vigneau and Cynthia “Cindy” Lauer Van Berlo.',
+      'DNA, record, Facebook, yearbook, and multiple-source badges identify the evidence type supporting the card.'
+    ]),
+    renderSection('Candidate links',[
+      'Annette appears under Chris and Janet because they are the strongest current candidate pair.',
+      'Dashed purple Annette cards mean hypothesis only, not confirmed parent-child relationships.',
+      'Confirmed family relationships and candidate hypotheses should be read separately.'
+    ]),
+    renderSection('Popup evidence',[
+      'Click any person card to see the evidence, DNA values, candidate reasoning, and boundaries for that person.',
+      'The former Evidence/DNA and How Candidates Were Found information has been moved into these popups.'
+    ])
+  ].join('');
+  document.getElementById('detail').classList.add('show');
+});
+document.getElementById('closeDetail').addEventListener('click',()=>document.getElementById('detail').classList.remove('show'));
+</script>
+<script src="data/placement.js"></script>
+<script src="data/candidate-status.js"></script>
+<script src="data/editor.js"></script>
+</body>
+</html>
+
+
+
