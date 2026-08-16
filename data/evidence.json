@@ -336,7 +336,7 @@
         "relationship_notes": [
           "Child of Buzz and June Vigneau",
           "Married Merle Sievert in 1981",
-          "Parent of Andrew Sievert, Matt Sievert, and Adam Sievert",
+          "Parent of Briget Marie Sievert / Briget Pope, Andrew Sievert, Matt Sievert, and Adam Sievert",
           "Candidate classification: Unresolved but weaker"
         ],
         "marriage": {
@@ -345,6 +345,16 @@
           "evidence": "User-provided Emmet County marriage record"
         },
         "descendants": [
+          {
+            "name": "Briget Marie Sievert / Briget Pope",
+            "parents": [
+              "Nina Vigneau"
+            ],
+            "relationship": "Oldest child",
+            "source_1": "Family confirmation",
+            "confidence": "confirmed_by_family",
+            "notes": "Family confirmation resolves Briget's placement as Nina's oldest child; exact birth date can still be refined separately."
+          },
           {
             "name": "Andrew Sievert",
             "parents": [
@@ -375,7 +385,8 @@
         ],
         "evidence": [
           "Verified family structure",
-          "Emmet County marriage record"
+          "Emmet County marriage record",
+          "Family confirmation"
         ]
       },
       {
@@ -1006,8 +1017,8 @@
         {
           "name": "Nina Vigneau",
           "status": "unresolved_but_weaker",
-          "verified_timeline": "Married Merle Sievert in 1981 according to a user-provided Emmet County marriage record; this does not exclude a 1979 birth",
-          "evidence_boundary": "Nina was investigated and is now unresolved but weaker; keep her in the documented Vigneau tree, not as a leading parent candidate."
+          "verified_timeline": "Married Merle Sievert in 1981 according to a user-provided Emmet County marriage record; family confirmation identifies Briget as Nina's oldest child",
+          "evidence_boundary": "Nina was investigated and is now unresolved but weaker; keep her in the documented Vigneau tree, not as a leading parent candidate. Briget's placement as Nina's oldest child is resolved by family confirmation."
         }
       ],
       "historically_eliminated": [
@@ -1074,6 +1085,6 @@
   },
   "unresolved": [
     "Exact biological parents of the user's wife",
-    "Briget Marie Sievert / Briget Pope unresolved intermediary identity/relationship question"
+    "Briget Marie Sievert / Briget Pope exact birth date refinement"
   ]
 }
