@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
 <title>Evidence-Backed Family Tree</title>
 <style>
 :root{
@@ -25,6 +26,16 @@
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+body.locked .app,body.locked .detail{display:none}
+.passcode-screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eef2ff,#f8fafc);padding:22px;z-index:100}
+body:not(.locked) .passcode-screen{display:none}
+.passcode-card{width:min(430px,100%);background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:0 18px 55px rgba(15,23,42,.18);padding:24px}
+.passcode-card h1{font-size:24px;margin:0 0 8px}
+.passcode-card p{margin:0 0 16px;color:var(--muted);line-height:1.45}
+.passcode-form{display:flex;gap:8px}
+.passcode-form input{flex:1;border:1px solid var(--border);border-radius:12px;padding:11px 12px;font-size:16px}
+.passcode-form button{border:0;background:var(--accent);color:#fff;border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer}
+.passcode-error{min-height:18px;margin-top:10px;color:#b91c1c;font-size:13px}
 .app{max-width:1500px;margin:0 auto;padding:22px}
 .header,.card{background:var(--panel);border:1px solid var(--border);border-radius:18px}
 .header{padding:20px;margin-bottom:18px}
@@ -152,7 +163,18 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:
 }
 </style>
 </head>
-<body>
+<body class="locked">
+<div class="passcode-screen" id="passcodeScreen">
+  <div class="passcode-card">
+    <h1>Private family tree</h1>
+    <p>Enter the passcode to view the evidence-backed family tree.</p>
+    <form class="passcode-form" id="passcodeForm">
+      <input id="passcodeInput" type="password" autocomplete="current-password" placeholder="Passcode" aria-label="Passcode" />
+      <button type="submit">View</button>
+    </form>
+    <div class="passcode-error" id="passcodeError" role="alert"></div>
+  </div>
+</div>
 <div class="app">
   <div class="header">
     <h1>Evidence-Backed Family Tree</h1>
@@ -529,6 +551,37 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:
 </div>
 
 <script>
+const passcodeHash='11b7256c0b55537d0c104fd780c9b85af8a49f10f8e0b5c1011a52a34dc0ba1a';
+const passcodeFallbackHash='3ac9cf2b';
+const simpleHash=text=>{
+  let hash=0;
+  for(const char of text)hash=(Math.imul(hash,31)+char.charCodeAt(0))>>>0;
+  return hash.toString(16);
+};
+const hashText=async text=>{
+  if(!globalThis.crypto?.subtle)return simpleHash(text);
+  const bytes=new TextEncoder().encode(text);
+  const digest=await crypto.subtle.digest('SHA-256',bytes);
+  return [...new Uint8Array(digest)].map(byte=>byte.toString(16).padStart(2,'0')).join('');
+};
+const unlockPage=()=>document.body.classList.remove('locked');
+if(localStorage.getItem('annetteTreeUnlocked')==='yes')unlockPage();
+document.getElementById('passcodeForm')?.addEventListener('submit',async event=>{
+  event.preventDefault();
+  const input=document.getElementById('passcodeInput');
+  const error=document.getElementById('passcodeError');
+  const hashed=await hashText(input.value.trim());
+  if(hashed===passcodeHash||hashed===passcodeFallbackHash){
+    localStorage.setItem('annetteTreeUnlocked','yes');
+    unlockPage();
+    input.value='';
+    error.textContent='';
+  }else{
+    error.textContent='That passcode did not match.';
+    input.select();
+  }
+});
+
 const details={
   ulysses:['Multiple-source genealogy verification',['Spouse of Florence Mayville.','Father generation containing Eugene and Buzz Vigneau.']],
   florence:['Multiple-source genealogy verification',['Spouse of Ulysses / Ullysse J. Vigneau.']],
