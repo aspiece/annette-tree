@@ -280,7 +280,8 @@
         "relationship_notes": [
           "Child of Buzz and June Vigneau",
           "Spouse of Keri Matchinski",
-          "Parent of Amanda Gilkerson and Anna Vigneau"
+          "Parent of Amanda Gilkerson and Anna Vigneau",
+          "Strongest paternal lead for Annette; verbal confirmation places Chris and Janet together during the summer 1978 conception period"
         ],
         "marriage": {
           "spouse": "Keri Matchinski",
@@ -321,10 +322,12 @@
         "notes": [
           "Documentary evidence places Chris in Petoskey throughout 1977 and still socially connected there in May 1980.",
           "Chris was not married to Keri during the likely June 1978 conception window.",
-          "The highest-priority gap is Chris's residence and employment during early June through early July 1978."
+          "Verbal confirmation places Chris and Janet together during the summer 1978 conception period.",
+          "The highest-priority remaining gap is direct paternity confirmation through DNA, adoption, birth, or court evidence."
         ],
         "evidence": [
-          "Verified family structure"
+          "Verified family structure",
+          "Verbal family confirmation"
         ]
       },
       {
@@ -542,7 +545,8 @@
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Verified daughter in the Edward Henry Lauer / Theresa Kruzel family",
-          "Candidate classification: Still in play / leading historical candidate"
+          "Maternal side resolved by verbal family confirmation",
+          "Verbal confirmation says Janet became pregnant in summer 1978 and placed the child for adoption in spring 1979"
         ],
         "marriage": {
           "spouse": "Rich Wolf",
@@ -550,11 +554,23 @@
           "year": 1999,
           "evidence": "User-confirmed marriage evidence"
         },
-        "candidate_status": "Research candidate only; not a proven biological parent",
+        "candidate_status": "Maternal side resolved by verbal family confirmation",
         "evidence": [
           "Edward H. Lauer 1997 obituary",
           "Verified family reconstruction",
-          "Secondary public-record birth index"
+          "Secondary public-record birth index",
+          "Verbal family confirmation"
+        ],
+        "descendants": [
+          {
+            "name": "Annette (Compeau) Spiece",
+            "parents": [
+              "Janet Lauer Wolf"
+            ],
+            "relationship": "Daughter placed for adoption",
+            "source_1": "Verbal family confirmation",
+            "confidence": "confirmed_by_family"
+          }
         ],
         "facebook_evidence": [
           "User-confirmed Facebook evidence: Janet was Petoskey High School Class of 1975."
@@ -586,10 +602,10 @@
         "notes": [
           "Public-record aggregators have produced inconsistent ages for Janet, so conflicting secondary records should not override stronger evidence.",
           "Janet was documented at 927 Kalamazoo St., Petoskey on January 17, 1977 and remained local through North Central Michigan College graduation in June 1977.",
-          "No evidence currently shows Janet leaving Petoskey before the likely June 1978 conception window.",
+          "Verbal confirmation says Janet became pregnant in summer 1978.",
+          "Verbal confirmation says Janet placed the child for adoption in spring 1979.",
           "Janet married Rich Wolf in May 1999, so she was not married to Rich during 1978-1979.",
-          "The highest-priority Janet gap is residence and employment between June 1977 and July 1978.",
-          "No biological child of Janet Lauer Wolf has yet been reliably identified."
+          "A documentary adoption, birth, or court record would still be stronger archival confirmation."
         ]
       },
       {
@@ -1012,7 +1028,8 @@
         {
           "name": "Chris Vigneau",
           "status": "still_in_play",
-          "evidence_boundary": "Candidate-specific DNA reasoning and 1978–1979 timeline are missing from current project files"
+          "verified_timeline": "Verbal confirmation places Chris and Janet together during the summer 1978 conception period",
+          "evidence_boundary": "Chris remains the strongest paternal lead, but paternity still needs direct DNA, adoption, birth, or court confirmation."
         },
         {
           "name": "Nina Vigneau",
@@ -1040,14 +1057,14 @@
       ]
     },
     "janet_lauer_wolf": {
-      "status": "still_in_play",
-      "status_label": "Still in play / research candidate",
+          "status": "resolved_maternal",
+          "status_label": "Maternal side resolved by verbal confirmation",
       "why_elevated": [
         "Verified member of the Edward Henry Lauer / Theresa Kruzel daughter generation",
         "Family position is compatible with the Lauer-side evidence",
         "The 1973 Petoskey High School yearbook places Janet in the same sophomore cohort as Chris Vigneau",
         "Later documentary evidence verifies Janet's marriage relationship with Rich Wolf, but the marriage date is not established",
-        "No verified 1978\u20131979 location is currently established"
+        "Verbal confirmation says Janet became pregnant in summer 1978 and placed the child for adoption in spring 1979"
       ],
       "recovered_records": [
         "Elizabeth A. VanBerlo's 2023 funeral-home obituary identifies Janet (Lauer) and Rich Wolf together among Elizabeth's aunts and uncles",
@@ -1057,11 +1074,11 @@
       "child_relationship_boundaries": [
         "Amy Mae Wolf was Richard Wolf's biological daughter and Janet's stepdaughter, not Janet's biological child",
         "Andy Wolf is identified as Amy's brother, but the obituary does not explicitly identify Andy's mother; his biological relationship to Janet remains unresolved",
-        "No reliable source located in this pass identifies any biological child of Janet"
+        "Wolf-family obituary records should not be used to attach Amy, Andy, or other Wolf descendants to Janet as biological children without a direct source"
       ],
       "remaining_gaps": [
         "Janet's birth date or year",
-        "Janet's 1978\u20131979 location",
+        "Documentary adoption, birth, or court confirmation of the verbal adoption account",
         "Independent parent-identifying records for Andy or any other reported Wolf child"
       ]
     },
@@ -1080,11 +1097,11 @@
       "Elizabeth VanBerlo Facebook clue: Barbara = mother; Lori = cousin",
       "Infer the relevant Lauer generation without assigning Lori an unproven parent",
       "Filter by generation, age, geography, and 1978\u20131979 timeline",
-      "Elevate Janet and Cindy as research candidates only"
+      "Resolve Janet as the maternal side by verbal confirmation; keep Cindy as unresolved but weaker"
     ]
   },
   "unresolved": [
-    "Exact biological parents of the user's wife",
+    "Documentary paternity confirmation for Chris or any other paternal lead",
     "Briget Marie Sievert / Briget Pope exact birth date refinement"
   ]
 }

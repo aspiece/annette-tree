@@ -59,9 +59,11 @@ body:not(.locked) .passcode-screen{display:none}
 .person:hover{border-color:var(--accent);background:var(--accent-soft)}
 .person.candidate-parent{border-color:#c94f7c;background:#fff0f6}
 .person.strong-candidate{border-color:#7c3aed;background:#f5f3ff}
+.person.maternal-confirmed{border-color:#15803d;background:#f0fdf4}
 .person.deprioritized{border-color:#94a3b8;background:#f8fafc}
 .person.weaker-candidate{border-color:#d97706;background:#fff7ed}
 .person.candidate-child{border-style:dashed;border-color:#7c3aed;background:#faf5ff}
+.person.maternal-child{border-color:#15803d;background:#f0fdf4}
 .name{font-weight:700;line-height:1.25}
 .meta{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.35}
 .spouse-note{font-size:12px;color:var(--muted);margin-top:7px;padding-top:7px;border-top:1px solid var(--border);line-height:1.35}
@@ -74,6 +76,7 @@ body:not(.locked) .passcode-screen{display:none}
 .child:before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--line)}
 .children.candidate-hypothesis:before,.child.candidate-hypothesis:before{background:transparent;border-top:2px dashed #7c3aed}
 .child.candidate-hypothesis:before{border-top:0;border-left:2px dashed #7c3aed}
+.children.maternal-line:before,.child.maternal-line:before{background:#15803d}
 .generation-accordion{position:relative;margin-top:28px;text-align:center;min-width:max-content}
 .generation-accordion:before{content:"";position:absolute;top:-28px;left:50%;width:2px;height:28px;background:var(--line)}
 .generation-accordion>summary{display:inline-block;list-style:none;border:1px solid var(--border);border-radius:999px;background:#fff;padding:7px 12px;font-size:12px;font-weight:700;color:#475569;cursor:pointer;box-shadow:0 1px 4px rgba(15,23,42,.05)}
@@ -178,11 +181,12 @@ body:not(.locked) .passcode-screen{display:none}
 <div class="app">
   <div class="header">
     <h1>Evidence-Backed Family Tree</h1>
-    <p>The base family tree contains only relationships and dates supported by records, DNA-supported pedigree work, explicit Facebook family listings, public Facebook information, or facts independently verified by more than one source. Candidate reasoning is shown separately so hypotheses are never mistaken for proven pedigree facts.</p>
+    <p>The base family tree contains relationships and dates supported by records, DNA-supported pedigree work, explicit Facebook family listings, public Facebook information, verbal family confirmation, or facts independently verified by more than one source. Candidate reasoning is labeled separately so hypotheses are never mistaken for proven pedigree facts.</p>
     <div class="badges" style="justify-content:flex-start;margin-top:12px">
       <span class="badge record">Record</span>
       <span class="badge dna">DNA</span>
       <span class="badge fb">Facebook</span>
+      <span class="badge fb">Verbal / family confirmation</span>
       <span class="badge multi">Multiple sources</span>
       <span class="badge inference">Inference</span>
     </div>
@@ -199,7 +203,7 @@ body:not(.locked) .passcode-screen{display:none}
     </div>
     <div class="card">
       <div class="section-title">Parent 1 &mdash; Vigneau Side</div>
-      <div class="section-subtitle">Confirmed Vigneau / Affholter family structure. Married-in spouses are shown inside the blood-relative card so the branch flows down by generation.</div>
+      <div class="section-subtitle">Confirmed Vigneau / Affholter family structure. Chris remains the strongest paternal lead; verbal confirmation places Chris and Janet together during the summer 1978 conception window.</div>
       <div class="tree wide-tree">
         <div class="generation">
           <div class="person" data-id="ulysses">
@@ -281,9 +285,9 @@ body:not(.locked) .passcode-screen{display:none}
               <div class="child" style="order:1956">
                 <div class="person strong-candidate" data-id="chris">
                   <div class="name">Chris Andrew Vigneau</div>
-                  <div class="meta">b. 1956 &middot; Petoskey<br>Petoskey HS cohort with Janet<br>1978 location/job unresolved</div>
+                  <div class="meta">b. 1956 &middot; Petoskey<br>Summer 1978 contact with Janet verbally confirmed<br>Paternal proof still pending</div>
                   <div class="spouse-note">Keri Matchinski &middot; m. 1981</div>
-                  <div class="badges"><span class="badge inference">Strong candidate</span><span class="badge record">1977 Petoskey</span><span class="badge record">A&amp;W softball</span></div>
+                  <div class="badges"><span class="badge inference">Strong paternal lead</span><span class="badge fb">Verbal confirmation</span><span class="badge record">1977 Petoskey</span></div>
                 </div>
                 <details class="generation-accordion">
                   <summary>Show Chris + Keri children</summary>
@@ -292,9 +296,9 @@ body:not(.locked) .passcode-screen{display:none}
                   <div class="child" style="order:1989"><div class="person" data-id="anna"><div class="name">Anna Vigneau</div><div class="meta">b. 1989<br>Child of Chris + Keri</div><div class="badges"><span class="badge fb">User-confirmed</span></div></div></div>
                   </div>
                 </details>
-                <div class="branch-label">Candidate hypothesis only</div>
+                <div class="branch-label">Strong paternal lead</div>
                 <div class="children candidate-hypothesis">
-                  <div class="child candidate-hypothesis"><div class="person candidate-child" data-id="wife"><div class="name">Annette (Compeau) Spiece</div><div class="meta">Born Mar. 9, 1979<br>Likely conception: June 1978<br>Hypothesis only</div><div class="badges"><span class="badge inference">Candidate link</span></div></div></div>
+                  <div class="child candidate-hypothesis"><div class="person candidate-child" data-id="wife"><div class="name">Annette (Compeau) Spiece</div><div class="meta">Born Mar. 9, 1979<br>Likely conception: June 1978<br>Paternal lead only</div><div class="badges"><span class="badge inference">Paternal lead</span></div></div></div>
                 </div>
               </div>
               <div class="child" style="order:1958">
@@ -323,8 +327,8 @@ body:not(.locked) .passcode-screen{display:none}
     </div>
 
     <div class="card">
-      <div class="section-title">Parent 2 &mdash; Lauer Side</div>
-      <div class="section-subtitle">Confirmed Lauer / Zuber family structure. This branch stays together in one scrollable tree, with spouses nested on the blood-relative cards.</div>
+      <div class="section-title">Maternal Side &mdash; Lauer / Zuber</div>
+      <div class="section-subtitle">Confirmed maternal family structure through Janet K. Lauer. Verbal confirmation says Janet became pregnant in summer 1978 and placed the child for adoption in spring 1979.</div>
       <div class="tree wide-tree">
         <div class="generation">
           <div class="person" data-id="john">
@@ -363,10 +367,10 @@ body:not(.locked) .passcode-screen{display:none}
                 </details>
               </div>
               <div class="child" style="order:1956">
-                <div class="person strong-candidate" data-id="janet"><div class="name">Janet K. Lauer</div><div class="meta">likely b. Dec. 1956<br>Petoskey HS '75<br>1978 job/location unresolved</div><div class="spouse-note">Rich Wolf &middot; m. May 1999</div><div class="badges"><span class="badge inference">Strong candidate</span><span class="badge record">1977 Petoskey</span><span class="badge yearbook">Yearbook</span></div></div>
-                <div class="branch-label">Candidate hypothesis only</div>
-                <div class="children candidate-hypothesis">
-                  <div class="child candidate-hypothesis"><div class="person candidate-child" data-id="wife"><div class="name">Annette (Compeau) Spiece</div><div class="meta">Born Mar. 9, 1979<br>Likely conception: June 1978<br>Hypothesis only</div><div class="badges"><span class="badge inference">Candidate link</span></div></div></div>
+                <div class="person maternal-confirmed" data-id="janet"><div class="name">Janet K. Lauer</div><div class="meta">likely b. Dec. 1956<br>Maternal side verbally confirmed<br>Pregnancy summer 1978; adoption spring 1979</div><div class="spouse-note">Rich Wolf &middot; m. May 1999</div><div class="badges"><span class="badge fb">Verbal confirmation</span><span class="badge record">1977 Petoskey</span><span class="badge yearbook">Yearbook</span></div></div>
+                <div class="branch-label">Maternal line &mdash; verbal confirmation</div>
+                <div class="children maternal-line">
+                  <div class="child maternal-line"><div class="person maternal-child" data-id="wife"><div class="name">Annette (Compeau) Spiece</div><div class="meta">Born Mar. 9, 1979<br>Likely conception: June 1978<br>Maternal link confirmed verbally</div><div class="badges"><span class="badge fb">Maternal side</span></div></div></div>
                 </div>
               </div>
               <div class="child" style="order:1958">
@@ -474,8 +478,8 @@ body:not(.locked) .passcode-screen{display:none}
   <!-- DISCOVERY -->
   <div id="discovery" class="view">
     <div class="card">
-      <div class="section-title">How Janet and Cindy Became Candidates</div>
-      <div class="section-subtitle">This tab shows the reasoning path. Boxes with solid borders are evidence. Dashed yellow boxes and arrows show inference. Janet and Cindy are candidates because of the combined pattern - not because a parent-child relationship has been proven.</div>
+      <div class="section-title">How the Maternal Side Was Identified</div>
+      <div class="section-subtitle">This section preserves the original reasoning path, then adds the newer verbal confirmation that resolves Janet as the maternal side.</div>
 
       <div class="discovery-wrap">
         <div class="discovery">
@@ -487,7 +491,7 @@ body:not(.locked) .passcode-screen{display:none}
 
           <div class="flow-box record-step">
             <h3>2. Lauer / Zuber Network</h3>
-            <p>The shared DNA and reconstructed pedigree place the Annette in the broader Lauer/Zuber family network.</p>
+            <p>The shared DNA and reconstructed pedigree place Annette in the broader Lauer/Zuber family network.</p>
           </div>
           <div><div class="arrow"></div></div>
 
@@ -498,26 +502,26 @@ body:not(.locked) .passcode-screen{display:none}
           <div><div class="arrow"></div><div class="inference-label">Inference</div></div>
 
           <div class="flow-box reason-step">
-            <h3>4. Candidate Generation</h3>
-            <p>Lori appears to belong in the same extended Lauer family. We then examined women in the appropriate generation whose age, location and 1979 timeline could fit.</p>
+            <h3>4. Maternal Resolution</h3>
+            <p>Verbal confirmation now identifies Janet as the person who became pregnant in summer 1978 and placed the child for adoption in spring 1979.</p>
           </div>
         </div>
       </div>
 
       <div class="candidate-area">
         <div class="candidate-card">
-          <div class="status">Candidate  -  not proven</div>
+          <div class="status">Maternal side - verbally confirmed</div>
           <h3>Janet Lauer Wolf</h3>
           <ul>
             <li>Verified daughter in the Edward Henry Lauer / Theresa Kruzel family.</li>
-            <li>Belongs to the generation indicated by the Lauer-side evidence.</li>
-            <li>Age/timeline is compatible with a child born in 1979.</li>
-            <li>Her exact 1978-1979 location and circumstances remain less well documented.</li>
+            <li>Verbal confirmation says Janet became pregnant in summer 1978.</li>
+            <li>Verbal confirmation says Janet placed the child for adoption in spring 1979.</li>
+            <li>Exact documentary adoption record still remains a future evidence target.</li>
           </ul>
         </div>
 
         <div class="candidate-card">
-          <div class="status">Candidate  -  not proven</div>
+          <div class="status">Unresolved but weaker</div>
           <h3>Cynthia "Cindy" Lauer Van Berlo</h3>
           <ul>
             <li>Verified daughter in the Edward Henry Lauer / Theresa Kruzel family.</li>
@@ -536,10 +540,10 @@ body:not(.locked) .passcode-screen{display:none}
       <div class="path-summary">
         <div class="path-node">Generation / Age Filter</div><div class="path-arrow"> -> </div>
         <div class="path-node">1978-1979 Timeline</div><div class="path-arrow"> -> </div>
-        <div class="path-node">Janet &amp; Cindy Elevated</div>
+        <div class="path-node">Janet Maternal Side Confirmed</div>
       </div>
 
-      <div class="boundary"><strong>Important evidence boundary:</strong> the Facebook cousin label and DNA network tell us that Lori belongs in this extended Lauer family, but they do not identify Lori's exact parent. Janet and Cindy were therefore elevated as <em>research candidates</em> based on family position, generation, age and timeline. The base family tree deliberately does not draw either woman as the Annette's biological parent.</div>
+      <div class="boundary"><strong>Important evidence boundary:</strong> the maternal-side placement now comes from verbal confirmation that Janet became pregnant in summer 1978 and placed the child for adoption in spring 1979. Chris remains the strongest paternal lead because verbal confirmation places Chris and Janet together during that period, but that is not the same as a documentary paternity record.</div>
     </div>
   </div>
 </div>
@@ -605,7 +609,7 @@ const details={
   mike:['Verified family structure + elimination status',['Michael “Mike” Vigneau Sr. was born in 1947.','Child of Buzz and June Vigneau.','Confirmed son Mike Vigneau Jr. shares 784 cM, about 11%, with Annette.','That amount is inconsistent with the half-sibling relationship Mike Jr. and Annette would have if Mike Sr. were Annette’s father.']],
   mike_jr:['Confirmed descendant DNA anchor',['Confirmed son of Mike Vigneau Sr.','Shares 784 cM, about 11%, with Annette.','Used as the DNA anchor for keeping Mike Sr. eliminated as Annette’s father candidate.']],
   jeff:['Verified family structure + DNA + elimination status',['Child of Buzz and June Vigneau.','Sally Kolb shares about 1,945 cM with Jeff.','Eliminated as a biological-parent candidate in the candidate registry; uncle-level placement is an interpretation from DNA plus pedigree, not an Ancestry label.']],
-  chris:['Chris Andrew Vigneau — compact candidate summary',['b. 1956 · Petoskey.','Petoskey HS cohort with Janet.','Petoskey confirmed throughout 1977; A&W softball, 1977.','Keri Matchinski · married 1981.','Unresolved: 1978 location/job.']],
+  chris:['Chris Andrew Vigneau — compact paternal-lead summary',['b. 1956 · Petoskey.','Petoskey HS cohort with Janet.','Verbal confirmation says Chris and Janet spent time together during the summer 1978 conception period.','Keri Matchinski · married 1981.','Paternal proof still pending.']],
   amanda:['User-confirmed child of Chris + Keri',['Confirmed by the user as a child of Chris Vigneau and Keri Matchinski.','Shown below Chris because Keri is married into the Vigneau line and is nested on Chris’s card.']],
   anna:['User-confirmed child of Chris + Keri',['Confirmed by the user as a child of Chris Vigneau and Keri Matchinski.','Shown below Chris because Keri is married into the Vigneau line and is nested on Chris’s card.']],
   nina:['Verified family structure + Emmet County record + weaker candidate status',['b. 1958.','Child of Buzz and June Vigneau.','Married Merle Sievert in 1981.','Family confirmation identifies Briget as Nina’s oldest child.','Investigated as a possible parent candidate; now unresolved but weaker.']],
@@ -626,7 +630,7 @@ const details={
   barbara:['1997 obituary + Facebook family listing + elimination analysis',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Married Peter VanBerlo.','Elizabeth VanBerlo explicitly lists Barbara as her mother.','Eliminated as Annette’s maternal candidate if Elizabeth’s August 12, 1978 birth is confirmed.']],
   richard:['Resolved Lori parentage + DNA fit',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Lori is confirmed as Richard and Betty’s child.','Eliminated as Annette’s father candidate: Annette’s 739 cM relationship to Lori supports descent through another Lauer sibling line.']],
   betty:['User-confirmed parentage + family evidence',['Parent of Lori Lauer-Totten with Richard Lauer.','Elizabeth VanBerlo family evidence also identifies Betty Lauer in the extended family as an aunt.']],
-  janet:['Janet K. Lauer — compact candidate summary',['Petoskey HS ’75.','NCMC ’77 · Associate of Commerce.','927 Kalamazoo St., Petoskey · 1977.','Rich Wolf · married May 1999.','Unresolved: 1978 job/location.']],
+  janet:['Janet K. Lauer — maternal-side summary',['Petoskey HS ’75.','NCMC ’77 · Associate of Commerce.','927 Kalamazoo St., Petoskey · 1977.','Verbal confirmation says Janet became pregnant in summer 1978 and placed the child for adoption in spring 1979.','Rich Wolf · married May 1999.']],
   cindy:['1997 obituary + Emmet County record + supporting family evidence',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Investigated as a maternal-side candidate; now unresolved but weaker.','Working at Fochtman Motor Co. in Petoskey in September 1978; engaged to Martin Van Berlo and married June 9, 1979.','Her Petoskey location fits the pregnancy window, but she is no longer carried as a leading candidate.']],
   patricia_edward:['Edward H. Lauer 1997 obituary + vital dates',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Patricia Ann Lauer was born February 14, 1948 and died July 18, 1949.','Eliminated as Annette’s mother.','Kept separate from Patricia “Patty” Lauer Bek in Donald and Velda’s branch.']],
   catherine:['Edward H. Lauer 1997 obituary + unresolved status',['Child of Edward H. Lauer and Theresa Kruzel Lauer.','Edward’s obituary says Catherine predeceased him.','Unclear / needs resolution: no death date is stored here proving she was deceased before 1978, so she should not be called eliminated yet.']],
@@ -650,7 +654,7 @@ const details={
   scott:['Court-record birth information + family reconstruction',['Born September 1968.','Eliminated as a biological-parent candidate on chronological grounds because Scott was approximately 10-11 years old during the relevant conception and birth period.']],
   peter:['Verified family reconstruction',['Child of Bryan Glen Lauer.']],
   morgan:['Verified family reconstruction',['Child of Bryan Glen Lauer.']],
-  wife:['Annette timeline context',['Annette (Compeau) Spiece was born March 9, 1979.','Likely conception: June 1978.','Shown under Chris and Janet as a strongest-current-candidate hypothesis only, not confirmed parentage.']]
+  wife:['Annette timeline context',['Annette (Compeau) Spiece was born March 9, 1979.','Likely conception: June 1978.','Shown under Janet as the verbally confirmed maternal line.','Shown under Chris as the strongest paternal lead, not as documentary proof of paternity.']]
 };
 
 const popupExtras={
@@ -669,14 +673,14 @@ const popupExtras={
   andrews:{'Facebook evidence':['Andrew’s Facebook family section explicitly identifies Matt Sievert and Adam Sievert as brothers and Dutch Sievert as cousin.']},
   nina:{'Record evidence':['Emmet County record: Nina Vigneau married Merle Sievert in 1981.','Family confirmation identifies Briget as Nina’s oldest child.','User confirmation identifies Andrew, Matt, and Adam as Nina’s children.'],'Briget resolved placement':['Briget is now attached below Nina as a resolved, family-confirmed oldest child.','This resolves the prior Briget intermediary note for tree-placement purposes.'],'Candidate status':['Unresolved but weaker.','A 1981 marriage does not by itself exclude a 1979 birth, but Nina is no longer carried as a leading candidate.']},
   briget:{'Family confirmation':['Family confirmation identifies Briget as Nina Vigneau’s oldest child.','This supports placing Briget below Nina on the Vigneau tree as resolved family placement.'],'Remaining detail':['Exact birth date/year can still be refined, but it is not needed for the Nina → Briget placement.']},
-  chris:{'Candidate boundary':['Strong current paternal candidate; not a confirmed biological parent.','Open question: where was Chris living and working in summer 1978?']},
-  janet:{'Candidate boundary':['Still in play / leading historical candidate; not a proven biological parent.','Open question: where did Janet live and work between June 1977 and summer 1978?']},
+  chris:{'Paternal lead boundary':['Strong current paternal lead; not yet a documentary-confirmed biological father.','Verbal confirmation places Chris and Janet together during the summer 1978 conception period.','Open question: what direct DNA, adoption, or documentary evidence confirms paternity?']},
+  janet:{'Maternal confirmation':['Verbal confirmation says Janet became pregnant in summer 1978.','Verbal confirmation says Janet placed the child for adoption in spring 1979.','This resolves the Lauer side as Annette’s maternal side on the tree.'],'Evidence boundary':['A documentary adoption, birth, or court record would still be the stronger archival confirmation.']},
   cindy:{'How candidate was found':['Lauer DNA anchors include Lori 739 cM, George 389 cM, Jessica 272 cM, and Lori ↔ George 360 cM.','Cindy is in Edward and Theresa’s child generation.','Yearbooks place Cindy in relevant Petoskey High School cohorts with Nina Vigneau in 1973, 1974, and 1975, and in Petoskey High School activities in 1976.','September 1978 evidence places Cindy working at Fochtman Motor Co. in Petoskey.','Cindy married Martin/Martie Van Berlo on June 9, 1979.'],'Evidence boundary':['Unresolved but weaker; not a proven biological parent and no longer a leading candidate.']},
   richard:{'DNA / elimination reasoning':['Lori Lauer-Totten is resolved as Richard and Betty’s child.','Annette’s 739 cM relationship to Lori is inconsistent with Richard also being Annette’s father.'],'Evidence boundary':['Eliminated as father candidate unless a stronger DNA model contradicts Lori’s resolved placement.']},
   edward:{'Record evidence':['Edward H. Lauer’s 1997 obituary identifies 11 children with Theresa: Cecelia, Diane, Barbara, Janet, Cynthia/Cindy, Patricia, Catherine, James, Lawrence, Richard, and Timothy.']},
   robert:{'Record evidence':['Robert Lauer Sr.’s 1981 obituary explicitly names Edward H. Lauer of Petoskey as his brother.','That brother relationship ties Robert → Donald → Patty into the same Lauer/Zuber family as Janet and Cindy.']},
   scott:{'Exclusion evidence':['Court-record birth information places Scott’s birth in September 1968.','Annette was born in 1979, making Scott approximately 10–11 years old during the relevant conception/birth period.']},
-  wife:{'Candidate hypothesis display':['Displayed under Chris and Janet because they are the strongest current candidate pair.','The dashed connector/card means hypothesis only; this is not a confirmed parent-child relationship.','No direct evidence has been found that Chris and Janet dated or had a romantic relationship.'],'DNA anchors':['Annette ↔ Jeffrey M. Vigneau: 1,675 cM, about 24.6%.','Annette ↔ Sally Kolb: 1,254 cM, about 18.4%.','Annette ↔ Mike Vigneau Jr.: 784 cM, about 11.5% — DNA anchor for Mike Sr. elimination.','Annette ↔ Lisa Hoffman: 761 cM, about 11.2%.','Annette ↔ Lori Lauer-Totten: 739 cM, about 10.9%.','Annette ↔ George Lauer: 389 cM, about 5.7%.','Annette ↔ Jessica Totten: 272 cM, about 4.0%.'],'How they may fit':['Jeffrey M. Vigneau: close Vigneau-side relative; current interpretation is uncle-level based on DNA plus pedigree.','Sally Kolb: older Affholter-side anchor connected through June Affholter Vigneau.','Mike Vigneau Jr.: confirmed son of Mike Sr.; the 784 cM / about 11.5% match supports eliminating Mike Sr. as Annette’s father.','Lisa Hoffman: Vigneau descendant match consistent with the reconstructed Tim Vigneau branch.','Lori Lauer-Totten: key Lauer-side anchor; 739 cM supports Annette descending through another Lauer sibling line rather than Richard also being Annette’s father.','George Lauer and Jessica Totten: supporting Lauer-network anchors; helpful for placement but not direct parent identification.'],'Evidence boundary':['Percentages are approximate conversions from shared cM values.','Relationship labels are interpretations from DNA plus the documented tree, not standalone proof from Ancestry.']}
+  wife:{'Tree placement':['Maternal side: Janet K. Lauer is now shown as Annette’s verbally confirmed maternal line.','Paternal side: Chris Vigneau remains the strongest paternal lead, with verbal confirmation that Chris and Janet spent time together during the conception period.'],'DNA anchors':['Annette ↔ Jeffrey M. Vigneau: 1,675 cM, about 24.6%.','Annette ↔ Sally Kolb: 1,254 cM, about 18.4%.','Annette ↔ Mike Vigneau Jr.: 784 cM, about 11.5% — DNA anchor for Mike Sr. elimination.','Annette ↔ Lisa Hoffman: 761 cM, about 11.2%.','Annette ↔ Lori Lauer-Totten: 739 cM, about 10.9%.','Annette ↔ George Lauer: 389 cM, about 5.7%.','Annette ↔ Jessica Totten: 272 cM, about 4.0%.'],'How they may fit':['Jeffrey M. Vigneau: close Vigneau-side relative; current interpretation is uncle-level based on DNA plus pedigree.','Sally Kolb: older Affholter-side anchor connected through June Affholter Vigneau.','Mike Vigneau Jr.: confirmed son of Mike Sr.; the 784 cM / about 11.5% match supports eliminating Mike Sr. as Annette’s father.','Lisa Hoffman: Vigneau descendant match consistent with the reconstructed Tim Vigneau branch.','Lori Lauer-Totten: key Lauer-side anchor now fitting the Janet maternal-side placement.','George Lauer and Jessica Totten: supporting Lauer-network anchors; helpful for placement context.'],'Evidence boundary':['Percentages are approximate conversions from shared cM values.','The Janet maternal placement is based on verbal confirmation; a documentary adoption, birth, or court record would still be stronger archival evidence.','Chris remains a paternal lead unless paternity is confirmed by direct DNA, adoption, or documentary evidence.']}
 };
 
 const renderSection=(title,items)=>items&&items.length?`<section class="detail-section"><h4>${title}</h4><ul>${items.map(x=>`<li>${x}</li>`).join('')}</ul></section>`:'';
@@ -708,14 +712,15 @@ document.getElementById('treeInfoBtn')?.addEventListener('click',()=>{
       'Children appear below the parent card they are attached to.'
     ]),
     renderSection('Color meanings',[
-      'Purple cards mark the strongest current candidate parents: Chris Vigneau and Janet K. Lauer.',
+      'Purple cards mark strongest current candidate leads, including Chris Vigneau on the paternal side.',
+      'Green cards/lines mark the verbally confirmed maternal line through Janet K. Lauer.',
       'Orange cards mark unresolved but weaker people such as Nina Vigneau and Cynthia “Cindy” Lauer Van Berlo.',
-      'DNA, record, Facebook, yearbook, and multiple-source badges identify the evidence type supporting the card.'
+      'DNA, record, Facebook, verbal/family confirmation, yearbook, and multiple-source badges identify the evidence type supporting the card.'
     ]),
     renderSection('Candidate links',[
-      'Annette appears under Chris and Janet because they are the strongest current candidate pair.',
-      'Dashed purple Annette cards mean hypothesis only, not confirmed parent-child relationships.',
-      'Confirmed family relationships and candidate hypotheses should be read separately.'
+      'Annette appears under Janet with a solid green maternal line based on verbal confirmation.',
+      'Annette appears under Chris with a dashed purple paternal-lead line because paternity is still not document-confirmed.',
+      'Confirmed maternal relationships and paternal candidate hypotheses should be read separately.'
     ]),
     renderSection('Popup evidence',[
       'Click any person card to see the evidence, DNA values, candidate reasoning, and boundaries for that person.',
