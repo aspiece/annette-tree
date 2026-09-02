@@ -1,6 +1,6 @@
 {
   "project": {
-    "title": "Lauer\u2013Vigneau Family Investigation",
+    "title": "Lauer–Vigneau Family Investigation",
     "research_subject": {
       "label": "Annette (Compeau) Spiece",
       "birth_month": 3,
@@ -23,19 +23,56 @@
     "provenance": "Values and explicit relationship labels transcribed by the user from previously supplied screenshots; original image files are not stored in the current project",
     "evidence_boundary": "The screenshots establish displayed cM values and explicit Facebook family labels. Exact genealogical relationships and pedigree placements are later interpretations unless separately documented.",
     "vigneau_affholter_wife_matches": [
-      {"match": "Jeffrey M. Vigneau", "shared_cm": 1675},
-      {"match": "Sally Kolb", "shared_cm": 1254},
-      {"match": "Mike Vigneau Jr.", "shared_cm": 784},
-      {"match": "Lisa Hoffman", "shared_cm": 761},
-      {"match": "laurieqkk1965", "shared_cm": 510},
-      {"match": "Claudia Vigneau", "shared_cm": 458},
-      {"match": "Audrey Cook", "shared_cm": 425}
+      {
+        "match": "Jeffrey M. Vigneau",
+        "shared_cm": 1675
+      },
+      {
+        "match": "Sally Kolb",
+        "shared_cm": 1254
+      },
+      {
+        "match": "Mike Vigneau Jr.",
+        "shared_cm": 784
+      },
+      {
+        "match": "Lisa Hoffman",
+        "shared_cm": 761
+      },
+      {
+        "match": "laurieqkk1965",
+        "shared_cm": 510
+      },
+      {
+        "match": "Claudia Vigneau",
+        "shared_cm": 458
+      },
+      {
+        "match": "Audrey Cook",
+        "shared_cm": 425
+      }
     ],
     "vigneau_affholter_pairwise": [
-      {"person_1": "Sally Kolb", "person_2": "Jeff Vigneau", "shared_cm": 1945},
-      {"person_1": "Sally Kolb", "person_2": "Mike Vigneau Jr.", "shared_cm": 860},
-      {"person_1": "Sally Kolb", "person_2": "Lisa Hoffman", "shared_cm": 1094},
-      {"person_1": "laurieqkk1965", "person_2": "Sally Kolb", "shared_cm": 1765}
+      {
+        "person_1": "Sally Kolb",
+        "person_2": "Jeff Vigneau",
+        "shared_cm": 1945
+      },
+      {
+        "person_1": "Sally Kolb",
+        "person_2": "Mike Vigneau Jr.",
+        "shared_cm": 860
+      },
+      {
+        "person_1": "Sally Kolb",
+        "person_2": "Lisa Hoffman",
+        "shared_cm": 1094
+      },
+      {
+        "person_1": "laurieqkk1965",
+        "person_2": "Sally Kolb",
+        "shared_cm": 1765
+      }
     ],
     "vigneau_interpretations": [
       "Jeff as the research subject's uncle is an interpretation combining 1,675 cM with the reconstructed pedigree",
@@ -43,34 +80,135 @@
       "Mike Vigneau Jr. is user-confirmed as Mike Sr.'s son; his 784 cM match with the research subject is used as the DNA anchor for Mike Sr.'s elimination"
     ],
     "lauer_wife_matches": [
-      {"match": "Lori Lauer-Totten", "shared_cm": 739},
-      {"match": "George Lauer", "shared_cm": 389},
-      {"match": "Karen Kruskie-Brubeck", "shared_cm": 273},
-      {"match": "Jessica Totten", "shared_cm": 272},
-      {"match": "G.R.", "shared_cm": 220},
-      {"match": "Judy Wiesner Matchett", "shared_cm": 196},
-      {"match": "Frank Daniels", "shared_cm": 178}
+      {
+        "match": "Lori Lauer-Totten",
+        "shared_cm": 739
+      },
+      {
+        "match": "George Lauer",
+        "shared_cm": 389
+      },
+      {
+        "match": "Karen Kruskie-Brubeck",
+        "shared_cm": 273
+      },
+      {
+        "match": "Jessica Totten",
+        "shared_cm": 272
+      },
+      {
+        "match": "G.R.",
+        "shared_cm": 220
+      },
+      {
+        "match": "Judy Wiesner Matchett",
+        "shared_cm": 196
+      },
+      {
+        "match": "Frank Daniels",
+        "shared_cm": 178
+      }
     ],
     "lori_shared_match_comparison": [
-      {"match": "George Lauer", "wife_shared_cm": 389, "lori_shared_cm": 360},
-      {"match": "Karen Kruskie-Brubeck", "wife_shared_cm": 273, "lori_shared_cm": 301},
-      {"match": "Jessica Totten", "wife_shared_cm": 272, "lori_shared_cm": 3435},
-      {"match": "G.R.", "wife_shared_cm": 220, "lori_shared_cm": 309},
-      {"match": "Judy Wiesner Matchett", "wife_shared_cm": 196, "lori_shared_cm": 111},
-      {"match": "Frank Daniels", "wife_shared_cm": 178, "lori_shared_cm": 106},
-      {"match": "Colin Zuber", "wife_shared_cm": 142, "lori_shared_cm": 55},
-      {"match": "Nancy Doty", "wife_shared_cm": 125, "lori_shared_cm": 115},
-      {"match": "Alec Zuber", "wife_shared_cm": 111, "lori_shared_cm": 53},
-      {"match": "D.K.", "wife_shared_cm": 100, "lori_shared_cm": 95},
-      {"match": "Graham Zuber", "wife_shared_cm": 98, "lori_shared_cm": 38},
-      {"match": "L.E.", "wife_shared_cm": 94, "lori_shared_cm": 194},
-      {"match": "Chandler Bearup", "wife_shared_cm": 64, "lori_shared_cm": 60},
-      {"match": "Christine Austin", "wife_shared_cm": 61, "lori_shared_cm": 63}
+      {
+        "match": "George Lauer",
+        "wife_shared_cm": 389,
+        "lori_shared_cm": 360
+      },
+      {
+        "match": "Karen Kruskie-Brubeck",
+        "wife_shared_cm": 273,
+        "lori_shared_cm": 301
+      },
+      {
+        "match": "Jessica Totten",
+        "wife_shared_cm": 272,
+        "lori_shared_cm": 3435
+      },
+      {
+        "match": "G.R.",
+        "wife_shared_cm": 220,
+        "lori_shared_cm": 309
+      },
+      {
+        "match": "Judy Wiesner Matchett",
+        "wife_shared_cm": 196,
+        "lori_shared_cm": 111
+      },
+      {
+        "match": "Frank Daniels",
+        "wife_shared_cm": 178,
+        "lori_shared_cm": 106
+      },
+      {
+        "match": "Colin Zuber",
+        "wife_shared_cm": 142,
+        "lori_shared_cm": 55
+      },
+      {
+        "match": "Nancy Doty",
+        "wife_shared_cm": 125,
+        "lori_shared_cm": 115
+      },
+      {
+        "match": "Alec Zuber",
+        "wife_shared_cm": 111,
+        "lori_shared_cm": 53
+      },
+      {
+        "match": "D.K.",
+        "wife_shared_cm": 100,
+        "lori_shared_cm": 95
+      },
+      {
+        "match": "Graham Zuber",
+        "wife_shared_cm": 98,
+        "lori_shared_cm": 38
+      },
+      {
+        "match": "L.E.",
+        "wife_shared_cm": 94,
+        "lori_shared_cm": 194
+      },
+      {
+        "match": "Chandler Bearup",
+        "wife_shared_cm": 64,
+        "lori_shared_cm": 60
+      },
+      {
+        "match": "Christine Austin",
+        "wife_shared_cm": 61,
+        "lori_shared_cm": 63
+      }
     ],
     "facebook_explicit_labels": {
-      "Brandon Totten": ["Lori Lauer-Totten — mother", "Tom Totten — father", "Jessica Totten — sister", "Kyle Totten — brother"],
-      "Andrew Sievert": ["Matt Sievert — brother", "Adam Sievert — brother", "Dutch Sievert — cousin"],
-      "Elizabeth VanBerlo": ["Barbara VanBerlo — mother", "Martie Van Berlo — uncle", "Suzanna Van Berlo — grandmother", "Lori Lauer-Totten — cousin", "Suzanne Montgomery — aunt", "Carol French Lauer — aunt", "Betty Lauer — aunt", "Martina Vandekerkhof — aunt", "Annie Donkers-van Der Hoek — aunt", "Steve Lauer — cousin", "Matt Lauer — cousin", "Jay Lauer — cousin", "Chris Lauer Waldron — cousin", "Dave Lauer — cousin"]
+      "Brandon Totten": [
+        "Lori Lauer-Totten — mother",
+        "Tom Totten — father",
+        "Jessica Totten — sister",
+        "Kyle Totten — brother"
+      ],
+      "Andrew Sievert": [
+        "Matt Sievert — brother",
+        "Adam Sievert — brother",
+        "Dutch Sievert — cousin"
+      ],
+      "Elizabeth VanBerlo": [
+        "Barbara VanBerlo — mother",
+        "Martie Van Berlo — uncle",
+        "Suzanna Van Berlo — grandmother",
+        "Lori Lauer-Totten — cousin",
+        "Suzanne Montgomery — aunt",
+        "Carol French Lauer — aunt",
+        "Betty Lauer — aunt",
+        "Martina Vandekerkhof — aunt",
+        "Annie Donkers-van Der Hoek — aunt",
+        "Steve Lauer — cousin",
+        "Matt Lauer — cousin",
+        "Jay Lauer — cousin",
+        "Chris Lauer Waldron — cousin",
+        "Dave Lauer — cousin"
+      ]
     },
     "facebook_boundaries": [
       "Elizabeth's cousin label for Lori does not identify which of Barbara's siblings is Lori's parent",
@@ -488,11 +626,12 @@
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Spouse of Philip Pemberton",
           "Married Philip Pemberton in 1959 and had five children",
-          "Candidate classification: Low probability, not absolutely excluded"
+          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
-        ]
+        ],
+        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
       },
       {
         "name": "Diane Lauer Hannan",
@@ -500,11 +639,12 @@
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Spouse of David Hannan",
           "Married David Hannan in 1968",
-          "Candidate classification: Not eliminated / unresolved but weaker"
+          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
-        ]
+        ],
+        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
       },
       {
         "name": "Barbara VanBerlo",
@@ -513,7 +653,8 @@
           "Spouse of Peter VanBerlo",
           "Mother of Elizabeth VanBerlo",
           "Elizabeth VanBerlo was born August 12, 1978",
-          "Candidate classification: Essentially excluded as Annette's mother because Elizabeth's August 12, 1978 birth and Annette's March 9, 1979 birth make two separate full pregnancies biologically incompatible"
+          "Candidate classification: Essentially excluded as Annette's mother because Elizabeth's August 12, 1978 birth and Annette's March 9, 1979 birth make two separate full pregnancies biologically incompatible",
+          "Janet's verbal maternal confirmation also closes this as a current maternal-side parent candidate"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary",
@@ -528,7 +669,8 @@
           "Verified member of the Edward Henry Lauer / Theresa Kruzel family",
           "Spouse/partner of Betty Lauer",
           "Parent of Lori Lauer-Totten with Betty Lauer",
-          "Candidate classification: Conditionally DNA-excluded as Annette's father because Annette's 739 cM match with Lori fits a cousin-type relationship better than Lori being Annette's half-sibling if Richard were Annette's father"
+          "Candidate classification: Conditionally DNA-excluded as Annette's father because Annette's 739 cM match with Lori fits a cousin-type relationship better than Lori being Annette's half-sibling if Richard were Annette's father",
+          "Janet's verbal maternal confirmation also closes this as a current maternal-side parent candidate"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary",
@@ -613,7 +755,7 @@
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Verified daughter in the Edward Henry Lauer / Theresa Kruzel family",
-          "Candidate classification: Unresolved but weaker"
+          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "marriage": {
           "spouse": "Martie Van Berlo",
@@ -621,7 +763,7 @@
           "year": 1979,
           "evidence": "User-provided Emmet County marriage record"
         },
-        "candidate_status": "Unresolved but weaker; not a proven biological parent",
+        "candidate_status": "Resolved maternal relative; not current biological-parent candidate",
         "evidence": [
           "Edward H. Lauer 1997 obituary",
           "Verified family structure",
@@ -734,7 +876,8 @@
           "Born February 14, 1948 and died July 18, 1949",
           "Predeceased Edward H. Lauer",
           "Candidate classification: Definitively excluded as Annette's mother",
-          "Separate from Patricia 'Patty' Lauer Bek in Donald and Velda's branch"
+          "Separate from Patricia 'Patty' Lauer Bek in Donald and Velda's branch",
+          "Janet's verbal maternal confirmation also closes this as a current maternal-side parent candidate"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
@@ -745,33 +888,36 @@
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Predeceased Edward H. Lauer",
-          "Candidate classification: Unclear / needs resolution because no death date is stored here proving she died before 1978"
+          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
-        ]
+        ],
+        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
       },
       {
         "name": "James Lauer",
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
-          "Candidate classification: Low but not definitively excluded",
-          "Evidence placed him around Kentwood, Michigan, away from Petoskey"
+          "Evidence placed him around Kentwood, Michigan, away from Petoskey",
+          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
-        ]
+        ],
+        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
       },
       {
         "name": "Lawrence Lauer",
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
-          "Candidate classification: Very low probability, not absolutely excluded",
-          "Evidence placed him moving to Clearwater, Florida around 1975"
+          "Evidence placed him moving to Clearwater, Florida around 1975",
+          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
-        ]
+        ],
+        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
       },
       {
         "name": "Timothy Lauer",
@@ -779,11 +925,12 @@
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Spouse of Linda",
           "Parent of Anthony Lauer, born June 1977",
-          "Candidate classification: Weaker father candidate"
+          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
-        ]
+        ],
+        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
       },
       {
         "name": "Elizabeth VanBerlo",
@@ -1057,8 +1204,8 @@
       ]
     },
     "janet_lauer_wolf": {
-          "status": "resolved_maternal",
-          "status_label": "Maternal side resolved by verbal confirmation",
+      "status": "resolved_maternal",
+      "status_label": "Maternal side resolved by verbal confirmation",
       "why_elevated": [
         "Verified member of the Edward Henry Lauer / Theresa Kruzel daughter generation",
         "Family position is compatible with the Lauer-side evidence",
@@ -1083,21 +1230,21 @@
       ]
     },
     "cynthia_cindy_lauer_van_berlo": {
-      "status": "unresolved_but_weaker",
+      "status": "resolved_maternal_relative",
       "why_elevated": [
-        "Verified member of the Edward Henry Lauer / Theresa Kruzel daughter generation",
-        "Family position is compatible with the Lauer-side evidence",
-        "Timeline/geography evidence placed her in the relevant age and location window",
-        "Emmet County record shows marriage to Martie Van Berlo in June 1979"
+        "Previously elevated because Cindy was a verified member of the Edward Henry Lauer / Theresa Kruzel daughter generation",
+        "Timeline/geography evidence placed her in a plausible 1978 Petoskey-area window",
+        "Now resolved as a maternal relative, not a current parent candidate, because Janet is verbally confirmed as Annette's maternal line"
       ]
     },
     "reasoning_chain": [
-      "DNA anchors: Lori 739 cM, George 389 cM, Jessica 272 cM, Lori\u2013George 360 cM",
+      "DNA anchors: Lori 739 cM, George 389 cM, Jessica 272 cM, Lori–George 360 cM",
       "Reconstructed Lauer/Zuber family network",
       "Elizabeth VanBerlo Facebook clue: Barbara = mother; Lori = cousin",
       "Infer the relevant Lauer generation without assigning Lori an unproven parent",
-      "Filter by generation, age, geography, and 1978\u20131979 timeline",
-      "Resolve Janet as the maternal side by verbal confirmation; keep Cindy as unresolved but weaker"
+      "Filter by generation, age, geography, and 1978–1979 timeline",
+      "Resolve Janet as the maternal side by verbal confirmation; keep Cindy as unresolved but weaker",
+      "Close other Lauer-side suspects as maternal relatives / not current parent candidates after Janet verbal maternal confirmation"
     ]
   },
   "unresolved": [
