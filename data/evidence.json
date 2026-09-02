@@ -630,12 +630,12 @@
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Spouse of Philip Pemberton",
           "Married Philip Pemberton in 1959 and had five children",
-          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
+          "Candidate classification: Eliminated as biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
         ],
-        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
+        "candidate_status": "Eliminated as biological-parent candidate"
       },
       {
         "name": "Diane Lauer Hannan",
@@ -643,12 +643,12 @@
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Spouse of David Hannan",
           "Married David Hannan in 1968",
-          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
+          "Candidate classification: Eliminated as biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
         ],
-        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
+        "candidate_status": "Eliminated as biological-parent candidate"
       },
       {
         "name": "Barbara VanBerlo",
@@ -759,7 +759,7 @@
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Verified daughter in the Edward Henry Lauer / Theresa Kruzel family",
-          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
+          "Candidate classification: Eliminated as biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "marriage": {
           "spouse": "Martie Van Berlo",
@@ -767,7 +767,7 @@
           "year": 1979,
           "evidence": "User-provided Emmet County marriage record"
         },
-        "candidate_status": "Resolved maternal relative; not current biological-parent candidate",
+        "candidate_status": "Eliminated as biological-parent candidate",
         "evidence": [
           "Edward H. Lauer 1997 obituary",
           "Verified family structure",
@@ -892,36 +892,36 @@
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Predeceased Edward H. Lauer",
-          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
+          "Candidate classification: Eliminated as biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
         ],
-        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
+        "candidate_status": "Eliminated as biological-parent candidate"
       },
       {
         "name": "James Lauer",
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Evidence placed him around Kentwood, Michigan, away from Petoskey",
-          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
+          "Candidate classification: Eliminated as biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
         ],
-        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
+        "candidate_status": "Eliminated as biological-parent candidate"
       },
       {
         "name": "Lawrence Lauer",
         "relationship_notes": [
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Evidence placed him moving to Clearwater, Florida around 1975",
-          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
+          "Candidate classification: Eliminated as biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
         ],
-        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
+        "candidate_status": "Eliminated as biological-parent candidate"
       },
       {
         "name": "Timothy Lauer",
@@ -929,12 +929,12 @@
           "Child of Edward H. Lauer and Theresa Kruzel Lauer",
           "Spouse of Linda",
           "Parent of Anthony Lauer, born June 1977",
-          "Candidate classification: Resolved as maternal relative / not current biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
+          "Candidate classification: Eliminated as biological-parent candidate because Janet is now verbally confirmed as Annette's maternal line"
         ],
         "evidence": [
           "Edward H. Lauer 1997 obituary"
         ],
-        "candidate_status": "Resolved maternal relative; not current biological-parent candidate"
+        "candidate_status": "Eliminated as biological-parent candidate"
       },
       {
         "name": "Elizabeth VanBerlo",
@@ -1234,11 +1234,11 @@
       ]
     },
     "cynthia_cindy_lauer_van_berlo": {
-      "status": "resolved_maternal_relative",
+      "status": "eliminated",
       "why_elevated": [
         "Previously elevated because Cindy was a verified member of the Edward Henry Lauer / Theresa Kruzel daughter generation",
         "Timeline/geography evidence placed her in a plausible 1978 Petoskey-area window",
-        "Now resolved as a maternal relative, not a current parent candidate, because Janet is verbally confirmed as Annette's maternal line"
+        "Now eliminated as a parent candidate because Janet is verbally confirmed as Annette's maternal line"
       ]
     },
     "reasoning_chain": [
@@ -1248,8 +1248,9 @@
       "Infer the relevant Lauer generation without assigning Lori an unproven parent",
       "Filter by generation, age, geography, and 1978–1979 timeline",
       "Resolve Janet as the maternal side by verbal confirmation; keep Cindy as unresolved but weaker",
-      "Close other Lauer-side suspects as maternal relatives / not current parent candidates after Janet verbal maternal confirmation",
-      "Resolve Nina as a parent candidate; with Janet verbally confirmed as the maternal side, Chris is the only remaining paternal option currently carried on the page"
+      "Eliminate other Lauer-side suspects as parent candidates after Janet verbal maternal confirmation",
+      "Resolve Nina as a parent candidate; with Janet verbally confirmed as the maternal side, Chris is the only remaining paternal option currently carried on the page",
+      "All Lauer family members other than Janet are treated as eliminated as Annette parent candidates; Janet remains the verbally confirmed maternal line"
     ]
   },
   "unresolved": [

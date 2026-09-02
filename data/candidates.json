@@ -190,9 +190,9 @@
       "name": "Cynthia 'Cindy' Lauer Van Berlo",
       "side": "Lauer / Zuber",
       "parent_side": "maternal",
-      "role": "maternal relative; former possible biological-parent candidate",
-      "status": "resolved_maternal_relative",
-      "status_label": "Resolved maternal relative / not current parent candidate",
+      "role": "maternal relative; eliminated former biological-parent candidate",
+      "status": "eliminated",
+      "status_label": "Eliminated",
       "why_candidate": [
         "Same Lauer DNA and family-network reasoning as Janet",
         "Cindy belongs to the relevant Edward Henry Lauer / Theresa Kruzel generation",
@@ -228,7 +228,7 @@
         "June 1979 marriage to Martie Van Berlo — user-provided Emmet County record"
       ],
       "negative_evidence": [
-        "Janet is now verbally confirmed as Annette’s maternal line, so Cindy is no longer carried as a current maternal-parent candidate."
+        "Janet is now verbally confirmed as Annette’s maternal line, so Cindy is eliminated as a current maternal-parent candidate."
       ],
       "descendant_test_targets": [
         {
@@ -266,17 +266,13 @@
         "June 9, 1979: married Martie Van Berlo"
       ],
       "priority_question": "No current maternal-parentage priority remains unless stronger evidence directly contradicts the Janet confirmation.",
-      "elimination_reason": "Resolved as not the current maternal-parent candidate because Janet is verbally confirmed as Annette’s maternal line.",
-      "remaining_questions": [
-        "Descendant DNA testing status for Alicia Huwyler and Nicholas Van Berlo can still be refined, but it is no longer a primary maternal-parent question."
-      ],
+      "elimination_reason": "Eliminated as a biological-parent candidate because Janet is verbally confirmed as Annette’s maternal line.",
+      "remaining_questions": [],
       "next_best_tests": [
-        "Retain Cindy as a documented maternal-side relative with verified descendants; do not prioritize her as a parent candidate unless stronger contradictory evidence appears."
+        "Retain Cindy as a documented maternal-side relative with verified descendants, not as a parent candidate."
       ],
-      "confidence_notes": "Resolved as maternal relative / not current parent candidate after Janet verbal maternal confirmation. Historical evidence remains useful context, not active candidacy.",
-      "missing_information": [
-        "Descendant testing status for Alicia Huwyler and Nicholas Van Berlo, if needed for collateral DNA work"
-      ]
+      "confidence_notes": "Closed/eliminated as a biological-parent candidate after Janet verbal maternal confirmation. Historical evidence remains useful family context, not active candidacy.",
+      "missing_information": []
     },
     {
       "name": "Tim Vigneau",
