@@ -419,7 +419,7 @@
           "Child of Buzz and June Vigneau",
           "Spouse of Keri Matchinski",
           "Parent of Amanda Gilkerson and Anna Vigneau",
-          "Strongest paternal lead for Annette; verbal confirmation places Chris and Janet together during the summer 1978 conception period"
+          "Only remaining paternal option currently carried on the page; verbal confirmation places Chris and Janet together during the summer 1978 conception period"
         ],
         "marriage": {
           "spouse": "Keri Matchinski",
@@ -478,7 +478,7 @@
           "Child of Buzz and June Vigneau",
           "Married Merle Sievert in 1981",
           "Parent of Briget Marie Sievert / Briget Pope, Andrew Sievert, Matt Sievert, and Adam Sievert",
-          "Candidate classification: Unresolved but weaker"
+          "Candidate classification: Resolved as Vigneau relative / not current parent candidate because Janet is now verbally confirmed as Annette’s maternal side"
         ],
         "marriage": {
           "spouse": "Merle Sievert",
@@ -528,6 +528,10 @@
           "Verified family structure",
           "Emmet County marriage record",
           "Family confirmation"
+        ],
+        "candidate_status": "Resolved relative; not current parent candidate",
+        "notes": [
+          "Nina remains in the Vigneau tree as a documented relative with family-confirmed children, not as a parental candidate."
         ]
       },
       {
@@ -1174,15 +1178,15 @@
       "active_candidates": [
         {
           "name": "Chris Vigneau",
-          "status": "still_in_play",
+          "status": "only_remaining_paternal_option",
           "verified_timeline": "Verbal confirmation places Chris and Janet together during the summer 1978 conception period",
-          "evidence_boundary": "Chris remains the strongest paternal lead, but paternity still needs direct DNA, adoption, birth, or court confirmation."
+          "evidence_boundary": "Chris is the only remaining paternal option currently carried on the page, but paternity still needs direct DNA, adoption, birth, or court confirmation."
         },
         {
           "name": "Nina Vigneau",
-          "status": "unresolved_but_weaker",
+          "status": "resolved_relative_not_parent_candidate",
           "verified_timeline": "Married Merle Sievert in 1981 according to a user-provided Emmet County marriage record; family confirmation identifies Briget as Nina's oldest child",
-          "evidence_boundary": "Nina was investigated and is now unresolved but weaker; keep her in the documented Vigneau tree, not as a leading parent candidate. Briget's placement as Nina's oldest child is resolved by family confirmation."
+          "evidence_boundary": "Nina was investigated and is now resolved as a Vigneau relative, not a current parent candidate, because Janet is verbally confirmed as Annette’s maternal side. Briget’s placement as Nina’s oldest child is resolved by family confirmation."
         }
       ],
       "historically_eliminated": [
@@ -1244,11 +1248,12 @@
       "Infer the relevant Lauer generation without assigning Lori an unproven parent",
       "Filter by generation, age, geography, and 1978–1979 timeline",
       "Resolve Janet as the maternal side by verbal confirmation; keep Cindy as unresolved but weaker",
-      "Close other Lauer-side suspects as maternal relatives / not current parent candidates after Janet verbal maternal confirmation"
+      "Close other Lauer-side suspects as maternal relatives / not current parent candidates after Janet verbal maternal confirmation",
+      "Resolve Nina as a parent candidate; with Janet verbally confirmed as the maternal side, Chris is the only remaining paternal option currently carried on the page"
     ]
   },
   "unresolved": [
-    "Documentary paternity confirmation for Chris or any other paternal lead",
+    "Documentary paternity confirmation for Chris, the only remaining paternal option currently carried on the page",
     "Briget Marie Sievert / Briget Pope exact birth date refinement"
   ]
 }

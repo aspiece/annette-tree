@@ -9,8 +9,9 @@
       "parent_side": "paternal",
       "role": "possible biological parent",
       "status": "still_in_play",
-      "status_label": "Still in play",
+      "status_label": "Only remaining paternal option",
       "why_candidate": [
+        "Only remaining paternal option currently carried on the page",
         "Verified child of Buzz and June Vigneau",
         "Family position is compatible with the narrowed Vigneau branch",
         "Verbal confirmation places Chris and Janet together during the summer 1978 conception period"
@@ -18,7 +19,8 @@
       "supporting_evidence": [
         "Verified Vigneau/Affholter family reconstruction",
         "DNA-supported validation of the family through Sally Affholter Kolb and Jeff Vigneau",
-        "Verbal family confirmation of Chris and Janet spending time together during the conception period"
+        "Verbal family confirmation of Chris and Janet spending time together during the conception period",
+        "Janet is verbally confirmed as Annette’s maternal side, leaving Chris as the only remaining paternal option currently carried on the page."
       ],
       "timeline": [],
       "geography": [],
@@ -50,7 +52,7 @@
         "Seek adoption, birth, or court evidence that names the biological father",
         "Test or compare a known descendant if available and appropriate"
       ],
-      "confidence_notes": "Strongest paternal lead; verbal confirmation supports contact/opportunity but is not documentary proof of paternity.",
+      "confidence_notes": "Only remaining paternal option currently carried on the page; verbal confirmation supports contact/opportunity but direct paternity proof remains desirable.",
       "missing_information": [
         "Direct paternity confirmation",
         "Candidate-specific DNA calculation"
@@ -60,9 +62,9 @@
       "name": "Nina Vigneau",
       "side": "Vigneau / Affholter",
       "parent_side": "paternal",
-      "role": "possible biological parent",
-      "status": "unresolved_but_weaker",
-      "status_label": "Unresolved but weaker",
+      "role": "Vigneau relative; former possible biological-parent candidate",
+      "status": "resolved_relative",
+      "status_label": "Resolved relative / not parent candidate",
       "why_candidate": [
         "Verified child of Buzz and June Vigneau",
         "Family position is compatible with the narrowed Vigneau branch",
@@ -92,23 +94,16 @@
         "1981 marriage to Merle Sievert — user-provided Emmet County record"
       ],
       "negative_evidence": [
-        "Nina is no longer carried as a leading candidate; current status is unresolved but weaker"
+        "Janet is verbally confirmed as Annette’s maternal side, so Nina is no longer carried as a parental candidate.",
+        "Nina remains a documented Vigneau family relative with family-confirmed children."
       ],
-      "elimination_reason": null,
-      "remaining_questions": [
-        "Where was Nina in 1978-1979?",
-        "What candidate-specific DNA evidence distinguishes Nina from the stronger Vigneau-side hypothesis?"
-      ],
+      "elimination_reason": "Resolved as not a parent candidate because Janet is verbally confirmed as Annette’s maternal side, leaving Chris as the only remaining paternal option currently carried on the page.",
+      "remaining_questions": [],
       "next_best_tests": [
-        "Recover prior location, school, and public Facebook research",
-        "Obtain candidate-specific DNA comparisons",
-        "Verify pre-1981 timeline using records"
+        "Keep Nina in the Vigneau tree as a documented relative; do not prioritize her as a parent candidate unless stronger contradictory evidence appears."
       ],
-      "confidence_notes": "Unresolved but weaker; family-confirmed child placement is now resolved, but this is not proof of Annette parentage.",
-      "missing_information": [
-        "Verified 1978-1979 location",
-        "Candidate-specific DNA calculation"
-      ]
+      "confidence_notes": "Resolved as a Vigneau relative / not current parent candidate.",
+      "missing_information": []
     },
     {
       "name": "Janet Lauer Wolf",
