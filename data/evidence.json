@@ -478,7 +478,7 @@
           "Child of Buzz and June Vigneau",
           "Married Merle Sievert in 1981",
           "Parent of Briget Marie Sievert / Briget Pope, Andrew Sievert, Matt Sievert, and Adam Sievert",
-          "Candidate classification: Resolved as Vigneau relative / not current parent candidate because Janet is now verbally confirmed as Annette’s maternal side"
+          "Candidate classification: Eliminated as biological-parent candidate because Janet is verbally confirmed as Annette’s maternal side, leaving Chris as the only remaining paternal option currently carried on the page"
         ],
         "marriage": {
           "spouse": "Merle Sievert",
@@ -529,9 +529,9 @@
           "Emmet County marriage record",
           "Family confirmation"
         ],
-        "candidate_status": "Resolved relative; not current parent candidate",
+        "candidate_status": "Eliminated as biological-parent candidate",
         "notes": [
-          "Nina remains in the Vigneau tree as a documented relative with family-confirmed children, not as a parental candidate."
+          "Nina remains in the Vigneau tree as a documented relative with family-confirmed children, but is eliminated as a parental candidate."
         ]
       },
       {
@@ -1184,9 +1184,9 @@
         },
         {
           "name": "Nina Vigneau",
-          "status": "resolved_relative_not_parent_candidate",
+          "status": "eliminated",
           "verified_timeline": "Married Merle Sievert in 1981 according to a user-provided Emmet County marriage record; family confirmation identifies Briget as Nina's oldest child",
-          "evidence_boundary": "Nina was investigated and is now resolved as a Vigneau relative, not a current parent candidate, because Janet is verbally confirmed as Annette’s maternal side. Briget’s placement as Nina’s oldest child is resolved by family confirmation."
+          "evidence_boundary": "Nina was investigated and is now eliminated as a parent candidate because Janet is verbally confirmed as Annette’s maternal side. Briget’s placement as Nina’s oldest child is resolved by family confirmation."
         }
       ],
       "historically_eliminated": [
@@ -1250,7 +1250,8 @@
       "Resolve Janet as the maternal side by verbal confirmation; keep Cindy as unresolved but weaker",
       "Eliminate other Lauer-side suspects as parent candidates after Janet verbal maternal confirmation",
       "Resolve Nina as a parent candidate; with Janet verbally confirmed as the maternal side, Chris is the only remaining paternal option currently carried on the page",
-      "All Lauer family members other than Janet are treated as eliminated as Annette parent candidates; Janet remains the verbally confirmed maternal line"
+      "All Lauer family members other than Janet are treated as eliminated as Annette parent candidates; Janet remains the verbally confirmed maternal line",
+      "Mark Nina eliminated as a parent candidate; retain her only as a documented Vigneau relative"
     ]
   },
   "unresolved": [

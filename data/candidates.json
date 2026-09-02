@@ -62,9 +62,9 @@
       "name": "Nina Vigneau",
       "side": "Vigneau / Affholter",
       "parent_side": "paternal",
-      "role": "Vigneau relative; former possible biological-parent candidate",
-      "status": "resolved_relative",
-      "status_label": "Resolved relative / not parent candidate",
+      "role": "Vigneau relative; eliminated former biological-parent candidate",
+      "status": "eliminated",
+      "status_label": "Eliminated",
       "why_candidate": [
         "Verified child of Buzz and June Vigneau",
         "Family position is compatible with the narrowed Vigneau branch",
@@ -94,15 +94,16 @@
         "1981 marriage to Merle Sievert — user-provided Emmet County record"
       ],
       "negative_evidence": [
-        "Janet is verbally confirmed as Annette’s maternal side, so Nina is no longer carried as a parental candidate.",
+        "Janet is verbally confirmed as Annette’s maternal side, so Nina is eliminated as a parental candidate.",
+        "Chris is the only remaining paternal option currently carried on the page.",
         "Nina remains a documented Vigneau family relative with family-confirmed children."
       ],
-      "elimination_reason": "Resolved as not a parent candidate because Janet is verbally confirmed as Annette’s maternal side, leaving Chris as the only remaining paternal option currently carried on the page.",
+      "elimination_reason": "Eliminated as a parent candidate because Janet is verbally confirmed as Annette’s maternal side, leaving Chris as the only remaining paternal option currently carried on the page.",
       "remaining_questions": [],
       "next_best_tests": [
-        "Keep Nina in the Vigneau tree as a documented relative; do not prioritize her as a parent candidate unless stronger contradictory evidence appears."
+        "Keep Nina in the Vigneau tree as a documented relative; do not use her as a parent candidate."
       ],
-      "confidence_notes": "Resolved as a Vigneau relative / not current parent candidate.",
+      "confidence_notes": "Closed/eliminated as a biological-parent candidate; retained only as a documented Vigneau relative.",
       "missing_information": []
     },
     {
